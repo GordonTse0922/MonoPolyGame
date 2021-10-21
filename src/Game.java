@@ -6,7 +6,13 @@ public class Game {
     }
 
     public void start(){
-        //TODO start the game
+        //TODO Start game:
+        /*
+         1. Print statements indicating game start
+         2. While loop to check game end conditions (one left unbroke || >=100 turns) and run the game
+         3. Ask for enter to toss dice
+         4. End turn when all players are tossed once and start next turn
+         */
     }
 
     public int tossDice(){
@@ -16,5 +22,14 @@ public class Game {
     public void movePlayer(String name){
         //TODO move player using the dice result
         int moves=dice.toss();
+    }
+
+    public boolean isEnded(){
+        //TODO really check with end conditions
+        return false;
+    }
+
+    public void end(){
+        //TODO end statements
     }
 }

@@ -8,7 +8,8 @@ public class Capital {
         return money;
     }
 
-    public void add(int amount){
-        money+=amount;
-    }
+    public void addMoney(int amount){money+=amount;}
+
+    public void deductMoney(int amount){money-=amount;}
+
 }

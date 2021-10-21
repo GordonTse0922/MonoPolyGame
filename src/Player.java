@@ -1,13 +1,20 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Player {
-    int position;
-    int playerId;
-    boolean broke;
-    Capital capital;
+    private int position;
+    private int playerId;
+    private boolean broke;
+    private List<PropertySquare> properties;
+    private CapitalController capital;
+    boolean inJail;
 
     public Player(int id){
         playerId=id;
         position=0;
-        capital = new Capital();
+        capital = new CapitalController(new Capital());
+        properties= new ArrayList<>();
+        inJail=false;
     }
 
     public int getPosition(){
@@ -21,16 +28,31 @@ public class Player {
 
     public void addCapital(int amount) {capital.add(amount);}
 
+    public void addProperty(PropertySquare property){
+        properties.add(property);
+    }
+
+    public void setInJail(){
+        inJail=true;
+    }
+
+    public void setOutJail(){
+        inJail=false;
+    }
+
     public int getId(){
         return playerId;
     }
 
-    public Capital getCapital(){
-        return capital;
+    public int getCapital(){
+        return capital.getMoney();
     }
 
     public boolean getBroke(){
         return broke;
     }
 
+    public List<PropertySquare> getProperties(){
+        return properties;
+    }
 }

@@ -5,7 +5,7 @@ import static java.util.Map.entry;
 public class PropertySquare extends Square {
 	private int owner;
 	private int cost;
-	private final Map<Integer, Integer> map = Map.ofEntries(
+	private static final Map<Integer, Integer> map = Map.ofEntries(
 			entry(2, 800),
 			entry(3,700),
 			entry(5,600),
@@ -34,7 +34,11 @@ public class PropertySquare extends Square {
 		return owner==0;
 	}
 
-	public void setOwner(){
+	public void setOwner(int playerId){
+		owner=playerId;
+	}
 
+	public int getCost(){
+		return cost;
 	}
 }

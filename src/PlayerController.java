@@ -1,8 +1,10 @@
 public class PlayerController {
     private Player player;
+    private PlayerView view;
 
     public PlayerController(Player model){
         this.player=model;
+        view=new PlayerView();
     }
 
     public void setPosition(int pos){
@@ -17,9 +19,13 @@ public class PlayerController {
         player.addCapital(amount);
     }
 
+    public void buyProperty(PropertySquare square){
+        player.addProperty(square);
+    }
+
     public boolean getBroke(){return player.getBroke();}
 
-    public Capital getCapital(){
+    public int getCapital(){
         return player.getCapital();
     }
 
@@ -31,4 +37,17 @@ public class PlayerController {
         return player.getPosition();
     }
 
+    public void inJail(){
+        player.setInJail();
+    }
+
+    public void outJail(){
+        player.setOutJail();
+    }
+
+    public void udpateStatus(int id){
+        int money=player.getCapital();
+        int properties=player.getProperties().size();
+        view.printPlayerStatus(id,money,properties);
+    }
 }
