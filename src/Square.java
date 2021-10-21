@@ -1,6 +1,6 @@
-abstract class Square {
-	protected String name;
-	protected int index;
+public class Square {
+	private String name;
+	private int index;
 	
 	public Square(String name, int index) {
 		this.name = name;
@@ -28,3 +28,5 @@ abstract class Square {
 		return index;
 	}
 }
+
+
