@@ -7,10 +7,4 @@ public class JailSquare extends Square {
 		super();
 	}
 	
-	public boolean goToJail() {
-		boolean isToJail = true;
-		//TODO Position Go To "InJail" Square.
-		
-		return isToJail;
-	}
 }

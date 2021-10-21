@@ -1,4 +1,3 @@
-
 public class GoSquare extends Square {
 	public GoSquare (String name, int index) {
 		super(name, index);
@@ -8,8 +7,5 @@ public class GoSquare extends Square {
 		super();
 	}
 	
-	public int gainSalary() {
-		int salary = 1500;
-		return salary;
-	}
+	
 }
