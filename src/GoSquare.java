@@ -7,4 +7,9 @@ public class GoSquare extends Square {
 	public GoSquare () {
 		super();
 	}
+	
+	public int gainSalary() {
+		int salary = 1500;
+		return salary;
+	}
 }
