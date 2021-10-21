@@ -4,9 +4,11 @@ public class PlayerController {
     public PlayerController(Player model){
         this.player=model;
     }
+
     public void setPosition(int pos){
         player.setPosition(pos);
     }
+
     public void setBroke(){
         player.setBroke(true);
     }
