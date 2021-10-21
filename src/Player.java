@@ -1,12 +1,13 @@
 public class Player {
-    int turns=0;
-    int position =0;
-    String playerName;
-    boolean broke =false;
-    Capital capital = new Capital();
+    int position;
+    int playerId;
+    boolean broke;
+    Capital capital;
 
-    public Player(String name){
-        playerName=name;
+    public Player(int id){
+        playerId=id;
+        position=0;
+        capital = new Capital();
     }
 
     public int getPosition(){
@@ -20,8 +21,8 @@ public class Player {
 
     public void addCapital(int amount) {capital.add(amount);}
 
-    public String getName(){
-        return playerName;
+    public int getId(){
+        return playerId;
     }
 
     public Capital getCapital(){

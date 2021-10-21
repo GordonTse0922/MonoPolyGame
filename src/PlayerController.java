@@ -23,8 +23,8 @@ public class PlayerController {
         return player.getCapital();
     }
 
-    public String getName(){
-        return player.getName();
+    public int getName(){
+        return player.getId();
     }
 
     public int getPosition(){
