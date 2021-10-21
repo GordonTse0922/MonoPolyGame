@@ -9,6 +9,7 @@ public class MonoPoly {
         int players=0;
         boolean validPlayers=false;
         System.out.println("Welcome to the MonoPoly!");
+        //TODO load saved game
         Scanner scanner = new Scanner(System.in);
         while(!validPlayers){
                 System.out.println("Please enter number of players (2-8):");

@@ -33,5 +33,13 @@ public class Game {
         //TODO end statements
     }
 
+    public void save(){
+        //TODO implement save game
+    }
+
+    public void load(){
+        //TODO implement load game
+    }
+
 
 }
