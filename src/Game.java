@@ -1,8 +1,8 @@
 public class Game {
     int turns;
-    DieController dice;
+    DiceController dice;
     public Game(int totalPlayers){
-        dice= new DieController();
+        dice= new DiceController();
     }
 
     public void start(){

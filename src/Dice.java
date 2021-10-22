@@ -1,10 +1,10 @@
 import java.util.Random;
 
-public class Die {
+public class Dice {
     private int faces;
     private Random rand;
 
-    public Die(){
+    public Dice(){
         faces=4;
         rand= new Random();
     }
