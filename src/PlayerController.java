@@ -19,7 +19,7 @@ public class PlayerController {
         player.addCapital(amount);
     }
 
-    public void buyProperty(PropertySquare square){
+    public void buyProperty(PropertySquareController square){
         player.addProperty(square);
     }
 

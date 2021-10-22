@@ -5,7 +5,7 @@ public class Player {
     private int position;
     private int playerId;
     private boolean broke;
-    private List<PropertySquare> properties;
+    private List<PropertySquareController> properties;
     private CapitalController capital;
     private boolean inJail;
 
@@ -28,7 +28,7 @@ public class Player {
 
     public void addCapital(int amount) {capital.add(amount);}
 
-    public void addProperty(PropertySquare property){
+    public void addProperty(PropertySquareController property){
         properties.add(property);
     }
 
@@ -52,7 +52,7 @@ public class Player {
         return broke;
     }
 
-    public List<PropertySquare> getProperties(){
+    public List<PropertySquareController> getProperties(){
         return properties;
     }
 }
