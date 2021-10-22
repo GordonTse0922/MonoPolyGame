@@ -1,8 +1,8 @@
 public class TaxSquareController extends SquareController{
-	private PropertySquare model;
-	private PropertySquareView view;
+	private TaxSquare model;
+	private TaxSquareView view;
 	
-	public TaxSquareController(PropertySquare model, PropertySquareView view) {
+	public TaxSquareController(TaxSquare model, TaxSquareView view) {
 		this.model = model;
 		this.view = view;
 	}
