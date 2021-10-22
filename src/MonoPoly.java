@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class MonoPoly {
-    Game game;
+	private Game game;
     public MonoPoly(int numberOfPlayers){game=new Game(numberOfPlayers);}
 
     public static void main(String[] args) {

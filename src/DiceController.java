@@ -1,6 +1,6 @@
 public class DiceController {
-    Dice dice;
-    DiceView view;
+    private Dice dice;
+    private DiceView view;
     public  DiceController(){
         dice = new Dice();
         view=new DiceView();

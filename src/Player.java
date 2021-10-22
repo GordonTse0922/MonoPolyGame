@@ -7,7 +7,7 @@ public class Player {
     private boolean broke;
     private List<PropertySquare> properties;
     private CapitalController capital;
-    boolean inJail;
+    private boolean inJail;
 
     public Player(int id){
         playerId=id;

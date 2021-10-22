@@ -1,6 +1,6 @@
 public class Game {
-    int turns;
-    DiceController dice;
+    private int turns;
+    private DiceController dice;
     public Game(int totalPlayers){
         dice= new DiceController();
     }
