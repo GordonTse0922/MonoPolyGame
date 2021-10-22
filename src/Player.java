@@ -12,7 +12,7 @@ public class Player {
     public Player(int id){
         playerId=id;
         position=0;
-        capital = new CapitalController(new Capital());
+        capital = new CapitalController(new Capital(),new CapitalView());
         properties= new ArrayList<>();
         inJail=false;
     }

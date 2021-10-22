@@ -1,8 +1,22 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Game {
     private int turns;
     private DiceController dice;
+    private PlayerController[] players;
+    private Square[] squares;
+    private static final int numOfSquare=20;
     public Game(int totalPlayers){
+        turns=0;
         dice= new DiceController();
+        players=new PlayerController[totalPlayers];
+        for (int i=0;i<totalPlayers;i++){
+            Player player = new Player(0);
+            players[i]=new PlayerController(player);
+        }
+        //TODO add different kind of squares based on the board description
+        squares=new Square[numOfSquare];
     }
 
     public void start(){
@@ -39,6 +53,10 @@ public class Game {
 
     public void load(){
         //TODO implement load game
+    }
+
+    public void nextTurn(){
+        //TODO next turn
     }
 
 

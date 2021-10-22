@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 public class MonoPoly {
 	private Game game;
-    public MonoPoly(int numberOfPlayers){game=new Game(numberOfPlayers);}
 
     public static void main(String[] args) {
         //TODO Initialize game
