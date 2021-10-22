@@ -1,5 +1,5 @@
 public class Capital {
-    int money;
+    private int money;
     public Capital(){
         this.money=1500;
     }
