@@ -1,4 +1,4 @@
-public class Square {
+abstract class Square {
 	private String name;
 	private int index;
 	
