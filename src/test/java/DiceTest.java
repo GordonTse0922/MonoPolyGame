@@ -1,4 +1,4 @@
-import org.hamcrest.core.IsInstanceOf;
+import Model.Dice;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

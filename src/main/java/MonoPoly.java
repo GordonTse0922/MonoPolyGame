@@ -1,3 +1,5 @@
+import Model.Game;
+
 import java.util.Scanner;
 
 public class MonoPoly {

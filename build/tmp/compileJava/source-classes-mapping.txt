@@ -1,70 +1,69 @@
-TaxSquareView.java
- TaxSquareView
-ParkingSquare.java
- ParkingSquare
-PropertySquare.java
- PropertySquare
-InJailSquareView.java
- InJailSquareView
-Player.java
- Player
-DiceView.java
- DiceView
-SquareView.java
- SquareView
-GoSquare.java
- GoSquare
-JailSquareController.java
- JailSquareController
-Dice.java
- Dice
-GoSquareController.java
- GoSquareController
-SquareController.java
- SquareController
-JailSquare.java
- JailSquare
-InJailSquare.java
- InJailSquare
-CapitalView.java
- CapitalView
-JailSquareView.java
- JailSquareView
-Game.java
- Game
-CapitalController.java
- CapitalController
-PlayerController.java
- PlayerController
-ParkingSquareView.java
- ParkingSquareView
-GoSquareView.java
- GoSquareView
+View/CapitalView.java
+ View.CapitalView
+Controller/TaxSquareController.java
+ Controller.TaxSquareController
+Controller/SquareController.java
+ Controller.SquareController
+View/DiceView.java
+ View.DiceView
+Controller/InJailSquareController.java
+ Controller.InJailSquareController
+Model/ChanceSquare.java
+ Model.ChanceSquare
+View/PropertySquareView.java
+ View.PropertySquareView
+View/ParkingSquareView.java
+ View.ParkingSquareView
+View/InJailSquareView.java
+ View.InJailSquareView
+View/SquareView.java
+ View.SquareView
+Controller/PropertySquareController.java
+ Controller.PropertySquareController
+Model/JailSquare.java
+ Model.JailSquare
+Model/Capital.java
+ Model.Capital
+ Model.Capital$PropertySquare
+Model/Square.java
+ Model.Square
+Model/TaxSquare.java
+ Model.TaxSquare
+Model/ParkingSquare.java
+ Model.ParkingSquare
+Controller/ParkingSquareController.java
+ Controller.ParkingSquareController
+View/ChanceSquareView.java
+ View.ChanceSquareView
+View/GoSquareView.java
+ View.GoSquareView
+Controller/TaxSquareView.java
+ Controller.TaxSquareView
 MonoPoly.java
  MonoPoly
-Capital.java
- Capital
-PlayerView.java
- PlayerView
-InJailSquareController.java
- InJailSquareController
-TaxSquareController.java
- TaxSquareController
-Square.java
- Square
-DiceController.java
- DiceController
-PropertySquareView.java
- PropertySquareView
-ChanceSquare.java
- ChanceSquare
-ChanceSquareController.java
- ChanceSquareController
-ParkingSquareController.java
- ParkingSquareController
-TaxSquare.java
- TaxSquare
-ChanceSquareView.java
- ChanceSquareView
-PropertySquareController.java
- PropertySquareController
+Model/Dice.java
+ Model.Dice
+Model/Player.java
+ Model.Player
+View/PlayerView.java
+ View.PlayerView
+Controller/GoSquareController.java
+ Controller.GoSquareController
+Model/GoSquare.java
+ Model.GoSquare
+Model/Game.java
+ Model.Game
+Controller/PlayerController.java
+ Controller.PlayerController
+View/JailSquareView.java
+ View.JailSquareView
+Controller/ChanceSquareController.java
+ Controller.ChanceSquareController
+Controller/DiceController.java
+ Controller.DiceController
+Controller/CapitalController.java
+ Controller.CapitalController
+Model/InJailSquare.java
+ Model.InJailSquare
+Controller/JailSquareController.java
+ Controller.JailSquareController
