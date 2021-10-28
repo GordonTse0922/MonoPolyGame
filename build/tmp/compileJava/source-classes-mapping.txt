@@ -41,8 +41,8 @@ Controller/TaxSquareView.java
  Controller.TaxSquareView
 MonoPoly.java
  MonoPoly
-Model/Dice.java
- Model.Dice
+Model/Game.java
+ Model.Game
 Controller/JailSquareController.java
  Controller.JailSquareController
 View/PlayerView.java
@@ -59,11 +59,11 @@ View/JailSquareView.java
  View.JailSquareView
 Controller/ChanceSquareController.java
  Controller.ChanceSquareController
-Controller/DiceController.java
- Controller.DiceController
-Model/Player.java
- Model.Player
-Model/Game.java
- Model.Game
 Controller/PlayerController.java
  Controller.PlayerController
+Model/Player.java
+ Model.Player
+Controller/DiceController.java
+ Controller.DiceController
+Model/Dice.java
+ Model.Dice

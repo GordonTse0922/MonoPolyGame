@@ -12,6 +12,6 @@ public class DiceTest {
     @Test
     public void diceTestWithInRange(){
         int result=dice.toss();
-        assertTrue(2 <= result && result <= 8);
+        assertTrue(0 <= result && result <= 8);
     }
 }

@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="PlayerTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-10-28T19:10:57" hostname="Gordons-MacBook-Pro.local" time="0.016">
+<testsuite name="PlayerTest" tests="14" skipped="0" failures="0" errors="0" timestamp="2021-10-28T19:58:02" hostname="Gordons-MacBook-Pro.local" time="0.158">
   <properties/>
-  <testcase name="testPlayerInitCapital()" classname="PlayerTest" time="0.01"/>
-  <testcase name="testPlayerAddCapital()" classname="PlayerTest" time="0.001"/>
-  <testcase name="testPlayerGetCapitalType()" classname="PlayerTest" time="0.0"/>
-  <testcase name="testPlayerDeductCapital()" classname="PlayerTest" time="0.0"/>
-  <testcase name="testPlayerIsBroke()" classname="PlayerTest" time="0.001"/>
+  <testcase name="testPlayerInitCapital()" classname="PlayerTest" time="0.008"/>
+  <testcase name="testPlayerAddCapital()" classname="PlayerTest" time="0.007"/>
+  <testcase name="testPlayerGetCapitalType()" classname="PlayerTest" time="0.009"/>
+  <testcase name="testPlayerDeductCapital()" classname="PlayerTest" time="0.008"/>
+  <testcase name="testPlayerIsBroke()" classname="PlayerTest" time="0.003"/>
+  <testcase name="testPlayerGetIdType()" classname="PlayerTest" time="0.002"/>
+  <testcase name="testPlayerCheckIdRange()" classname="PlayerTest" time="0.01"/>
+  <testcase name="testPlayerGetPosition()" classname="PlayerTest" time="0.007"/>
+  <testcase name="testPlayerCheckPositionRange()" classname="PlayerTest" time="0.006"/>
+  <testcase name="testPlayerCheckPropertiesType()" classname="PlayerTest" time="0.006"/>
+  <testcase name="testPlayerCheckPropertiesNull()" classname="PlayerTest" time="0.007"/>
+  <testcase name="CheckInitJailStatus()" classname="PlayerTest" time="0.008"/>
+  <testcase name="CheckSetInJail()" classname="PlayerTest" time="0.007"/>
+  <testcase name="CheckSetOutJail()" classname="PlayerTest" time="0.009"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

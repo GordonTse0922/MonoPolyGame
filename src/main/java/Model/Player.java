@@ -18,10 +18,10 @@ public class Player {
 
     public Player(int id){
         playerId=id;
-        position=0;
+        position=1;
         capital = new CapitalController(new Capital(),new CapitalView());
         properties= new ArrayList<>();
-        inJail=false;
+//        inJail=false;
     }
 
     public int getPosition(){
@@ -48,6 +48,8 @@ public class Player {
     public void setOutJail(){
         inJail=false;
     }
+
+    public boolean getJailStatus(){return inJail;}
 
     public int getId(){
         return playerId;
