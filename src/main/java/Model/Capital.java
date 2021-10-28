@@ -47,7 +47,7 @@ public class Capital {
         }
 
         public boolean isOwned(){
-            return owner==0;
+            return false;
         }
 
         public void setOwner(int playerId){
@@ -55,7 +55,7 @@ public class Capital {
         }
 
         public int getCost(){
-            return cost;
+            return 1;
         }
     }
 }

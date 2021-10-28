@@ -1,2 +1,6 @@
+CapitalTest.java
+ CapitalTest
 DiceTest.java
  DiceTest
+PlayerTest.java
+ PlayerTest

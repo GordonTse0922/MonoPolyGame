@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="PlayerTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-10-28T19:10:57" hostname="Gordons-MacBook-Pro.local" time="0.016">
+  <properties/>
+  <testcase name="testPlayerInitCapital()" classname="PlayerTest" time="0.01"/>
+  <testcase name="testPlayerAddCapital()" classname="PlayerTest" time="0.001"/>
+  <testcase name="testPlayerGetCapitalType()" classname="PlayerTest" time="0.0"/>
+  <testcase name="testPlayerDeductCapital()" classname="PlayerTest" time="0.0"/>
+  <testcase name="testPlayerIsBroke()" classname="PlayerTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

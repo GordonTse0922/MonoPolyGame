@@ -35,6 +35,8 @@ public class Player {
 
     public void addCapital(int amount) {capital.add(amount);}
 
+    public void minusCapital(int amount) {capital.deductMoney(amount);}
+
     public void addProperty(PropertySquareController property){
         properties.add(property);
     }

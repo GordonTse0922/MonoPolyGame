@@ -43,27 +43,27 @@ MonoPoly.java
  MonoPoly
 Model/Dice.java
  Model.Dice
-Model/Player.java
- Model.Player
+Controller/JailSquareController.java
+ Controller.JailSquareController
 View/PlayerView.java
  View.PlayerView
 Controller/GoSquareController.java
  Controller.GoSquareController
 Model/GoSquare.java
  Model.GoSquare
-Model/Game.java
- Model.Game
-Controller/PlayerController.java
- Controller.PlayerController
+Model/InJailSquare.java
+ Model.InJailSquare
+Controller/CapitalController.java
+ Controller.CapitalController
 View/JailSquareView.java
  View.JailSquareView
 Controller/ChanceSquareController.java
  Controller.ChanceSquareController
 Controller/DiceController.java
  Controller.DiceController
-Controller/CapitalController.java
- Controller.CapitalController
-Model/InJailSquare.java
- Model.InJailSquare
-Controller/JailSquareController.java
- Controller.JailSquareController
+Model/Player.java
+ Model.Player
+Model/Game.java
+ Model.Game
+Controller/PlayerController.java
+ Controller.PlayerController
