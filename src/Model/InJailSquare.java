@@ -12,7 +12,7 @@ public class InJailSquare extends Square {
 	public int askPayOrDice(int diceTime) {
 		int isQuitJail = 150;
 		
-		//TODO 0 = Remain Jailed, 1 = QuitJail in Free, 2 = QuitJail by Pay HKD 150
+		//TODO 0 = Remain Jailed, 1 = QuitJail in Free, 2 = QuitJail by Pay HKD 150, -1 = Parameter Error
 		
 		//TODO Check diceTime > 3?
 		//TODO If diceTime < 3

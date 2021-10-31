@@ -1,4 +1,4 @@
-
+package test;
 
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
@@ -44,5 +44,17 @@ public class JailSquareTest {
     public void jailSquareTestSetGetIndex() {
     	jailSquare.setIndex(1);
     	assertTrue(jailSquare.getIndex() == 1);
+    }
+    
+    @Test
+    @Order(7)
+    public void jailSquareTestGoToJailReturnType() {
+    	assertTrue(Boolean.class.isInstance(jailSquare.goToJail()));
+    }
+    
+    @Test
+    @Order(8)
+    public void jailSquareTestGoToJail() {
+    	assertTrue(jailSquare.goToJail());
     }
 }

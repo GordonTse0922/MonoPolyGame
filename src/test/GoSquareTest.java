@@ -1,3 +1,5 @@
+package test;
+
 
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
@@ -43,5 +45,18 @@ public class GoSquareTest {
     public void goSquareTestSetGetIndex() {
     	goSquare.setIndex(1);
     	assertTrue(goSquare.getIndex() == 1);
+    }
+    
+    @Test
+    @Order(7)
+    public void goSquareTestGainSalaryReturnType() {
+    	assertTrue(Integer.class.isInstance(goSquare.gainSalary()));
+    }
+    
+    @Test
+    @Order(8)
+    public void goSquareTestGainSalary() {
+    	int result = goSquare.gainSalary();
+    	assertTrue(result == 1500);
     }
 }

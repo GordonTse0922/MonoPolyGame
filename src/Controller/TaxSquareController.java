@@ -14,6 +14,6 @@ public class TaxSquareController extends SquareController {
 	}
 	
 	public int callPayTax() {
-		return model.payTax();
+		return model.payTax(1500);
 	}
 }

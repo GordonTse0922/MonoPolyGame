@@ -1,4 +1,4 @@
-
+package test;
 
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import Model.TaxSquare;
 
 public class TaxSquareTest {
-	TaxSquare taxSquare = new TaxSquare("TestTaxSqaure", 0);
+	TaxSquare taxSquare = new TaxSquare("No Name", 0);
 	
     @Test
     @Order(1)
@@ -23,7 +23,7 @@ public class TaxSquareTest {
     @Test
     @Order(3)
     public void taxSquareTestGetName(){
-    	assertEquals("TestTaxSqaure", taxSquare.getName());
+    	assertEquals("No Name", taxSquare.getName());
     }
     
     @Test
@@ -44,5 +44,25 @@ public class TaxSquareTest {
     public void taxSquareTestSetGetIndex() {
     	taxSquare.setIndex(1);
     	assertTrue(taxSquare.getIndex() == 1);
+    }
+    
+    @Test
+    @Order(7)
+    public void taxSquareTestPayTaxReturnType() {
+    	assertTrue(Integer.class.isInstance(taxSquare.payTax(1500)));
+    }
+    
+    @Test
+    @Order(8)
+    public void taxSquareTestPayTax() {
+    	int result = taxSquare.payTax(1500);
+    	assertTrue(result == 150);
+    }
+    
+    @Test
+    @Order(9)
+    public void taxSquareTestPayTaxParameterError() {
+    	int result = taxSquare.payTax(-1);
+    	assertTrue(result == -1);
     }
 }
