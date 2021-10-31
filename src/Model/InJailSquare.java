@@ -1,16 +1,12 @@
-package Controller;
+package Model;
 
-import Model.InJailSquare;
-import View.InJailSquareView;
+import Model.Square;
 
-public class InJailSquareController extends SquareController {
-	private InJailSquare model;
-	private InJailSquareView view;
-	
-	public InJailSquareController(InJailSquare model, InJailSquareView view) {
-		super(model,view);
-		this.model = model;
-		this.view = view;
+import java.util.Scanner;
+
+public class InJailSquare extends Square {
+	public InJailSquare (String name, int index) {
+		super(name, index);
 	}
 	
 	public int askPayOrDice(int diceTime) {

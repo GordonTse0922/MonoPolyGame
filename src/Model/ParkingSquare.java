@@ -7,7 +7,5 @@ public class ParkingSquare extends Square {
 		super(name, index);
 	}
 	
-	public ParkingSquare () {
-		super();
-	}
+
 }

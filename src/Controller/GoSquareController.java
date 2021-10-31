@@ -13,8 +13,7 @@ public class GoSquareController extends SquareController {
 		this.view = view;
 	}
 	
-	public int gainSalary() {
-		int salary = 1500;
-		return salary;
+	public int callGainSalary() {
+		return model.gainSalary();
 	}
 }

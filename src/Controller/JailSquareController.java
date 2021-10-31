@@ -13,10 +13,7 @@ public class JailSquareController extends SquareController {
 		this.view = view;
 	}
 	
-	public boolean goToJail() {
-		boolean isToJail = true;
-		//TODO Position Go To "InJail" Model.Square.
-		
-		return isToJail;
+	public boolean callGoToJail() {
+		return model.goToJail();
 	}
 }

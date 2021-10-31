@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.TaxSquare;
+import View.TaxSquareView;
 
 public class TaxSquareController extends SquareController {
 	private TaxSquare model;
@@ -12,9 +13,7 @@ public class TaxSquareController extends SquareController {
 		this.view = view;
 	}
 	
-	public int payTax() {
-		int tax = 0;
-		//TODO Pay 10% of player's money.
-		return tax;
+	public int callPayTax() {
+		return model.payTax();
 	}
 }

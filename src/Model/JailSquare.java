@@ -7,8 +7,11 @@ public class JailSquare extends Square {
 		super(name, index);
 	}
 	
-	public JailSquare () {
-		super();
+	public boolean goToJail() {
+		boolean isToJail = true;
+		//TODO Position Go To "InJail" Model.Square.
+		
+		return isToJail;
 	}
 	
 }
