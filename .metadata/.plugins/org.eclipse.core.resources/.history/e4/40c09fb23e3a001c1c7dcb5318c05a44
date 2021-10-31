@@ -1,0 +1,22 @@
+package test;
+
+import org.junit.jupiter.api.*;
+import static org.junit.jupiter.api.Assertions.*;
+
+import Controller.ChanceSquareController;
+import Model.ChanceSquare;
+import View.ChanceSquareView;
+
+import static org.mockito.Mockito.mock;
+
+public class ChanceSquareControllerTest {
+	private MockMvc mockMvc;
+	
+	private ChanceSquare chanceSquare = mock(ChanceSquare.class);
+	//ChanceSquare chanceSquare = new ChanceSquare();
+	
+	
+	ChanceSquareController chanceSquareController = new ChanceSquareController();
+	
+	
+}

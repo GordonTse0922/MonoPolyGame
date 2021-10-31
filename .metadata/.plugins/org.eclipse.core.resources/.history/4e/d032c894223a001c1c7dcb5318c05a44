@@ -1,0 +1,16 @@
+package test;
+import org.junit.jupiter.api.*;
+
+import Model.ChanceSquare;
+
+
+public class ChanceSquareTest {
+	ChanceSquare chanceSquare = new ChanceSquare("TestChanceSqaure", 0);
+	
+    @Test
+    public void chanceSquareTestSetGetName(){
+    	chanceSquare.setName("TestChance");
+    	String result = chanceSquare.getName(); 
+    	assertEquals("TestChance", result);
+    }
+}

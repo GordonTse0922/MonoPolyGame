@@ -14,5 +14,7 @@ test {
 dependencies {
 //    testCompile group: 'junit', name: 'junit', version: '4.12'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.4.2'
+	testImplementation 'org.mockito:mockito-inline:{mockitoversion}'
+    testImplementation 'org.mockito:mockito-junit-jupiter:{mockitoversion}'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.4.2'
 }

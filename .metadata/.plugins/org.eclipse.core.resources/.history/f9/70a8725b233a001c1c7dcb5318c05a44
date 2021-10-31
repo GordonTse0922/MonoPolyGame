@@ -1,0 +1,32 @@
+package test;
+import org.junit.jupiter.api.*;
+import static org.junit.jupiter.api.Assertions.*;
+
+import Model.ChanceSquare;
+
+
+public class ChanceSquareTest {
+	ChanceSquare chanceSquare = new ChanceSquare("TestChanceSqaure", 0);
+	
+    @Test
+    public void chanceSquareTestGetName(){
+    	assertEquals("TestChanceSqaure", chanceSquare.getName());
+    }
+    
+    @Test
+    public void chanceSquareTestGetIndex() {
+    	assertTrue(chanceSquare.getIndex() == 0);
+    }
+	
+    @Test
+    public void chanceSquareTestSetGetName(){
+    	chanceSquare.setName("TestChanceSetterGetterName");
+    	assertEquals("TestChanceSetterGetterName", chanceSquare.getName());
+    }
+    
+    @Test
+    public void chanceSquareTestSetGetIndex() {
+    	chanceSquare.setIndex(1);
+    	assertTrue(chanceSquare.getIndex() == 1);
+    }
+}

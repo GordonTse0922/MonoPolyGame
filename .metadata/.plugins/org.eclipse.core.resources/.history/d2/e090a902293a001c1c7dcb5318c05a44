@@ -1,0 +1,36 @@
+package test;
+
+import org.junit.jupiter.api.*;
+import static org.junit.jupiter.api.Assertions.*;
+
+import Model.JailSquare;
+
+public class JailSquareTest {
+	JailSquare jailSquare = new JailSquare("TestJailSqaure", 0);
+	
+    @Test
+    @Order(1)
+    public void jailSquareTestGetName(){
+    	assertEquals("TestJailSqaure", jailSquare.getName());
+    }
+    
+    @Test
+    @Order(2)
+    public void jailSquareTestGetIndex() {
+    	assertTrue(jailSquare.getIndex() == 0);
+    }
+	
+    @Test
+    @Order(3)
+    public void jailSquareTestSetGetName(){
+    	jailSquare.setName("TestJailSetterGetterName");
+    	assertEquals("TestJailSetterGetterName", jailSquare.getName());
+    }
+    
+    @Test
+    @Order(4)
+    public void jailSquareTestSetGetIndex() {
+    	jailSquare.setIndex(1);
+    	assertTrue(jailSquare.getIndex() == 1);
+    }
+}

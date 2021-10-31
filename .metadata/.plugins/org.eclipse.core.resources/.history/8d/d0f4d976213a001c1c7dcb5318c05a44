@@ -1,0 +1,10 @@
+package test;
+import static org.junit.jupiter.api.Assertions.*;
+import Model.ChanceSquare;
+
+
+public class SquareTest {
+	Square square = new Square("TestSqaure", 0);
+	
+	
+}
