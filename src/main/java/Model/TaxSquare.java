@@ -7,9 +7,9 @@ public class TaxSquare extends Square {
 		super(name, index);
 	}
 	
-	public TaxSquare () {
-		super();
+	public int payTax(int playerAmount) {
+		int tax = playerAmount/10;
+		//TODO Pay 10% of player's money. return -1 if parameter < 0
+		return tax;
 	}
-	
-
 }

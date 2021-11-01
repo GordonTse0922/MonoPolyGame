@@ -71,9 +71,9 @@ public class PlayerTest {
 
     @Test
     @Order(10)
-    public void testSetPosition(){
-        player.setPosition(1);
-        assertTrue(player.getPosition()==1);
+    public void testMove(){
+        player.move(1);
+        assertTrue(player.getPosition()==2);
     }
     @Test
     @Order(11)

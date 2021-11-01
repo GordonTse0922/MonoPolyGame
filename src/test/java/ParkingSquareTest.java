@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import Model.ParkingSquare;
 
 public class ParkingSquareTest {
-	ParkingSquare parkingSquare = new ParkingSquare("TestParkingSqaure", 0);
+	ParkingSquare parkingSquare = new ParkingSquare("No Name", 0);
 	
     @Test
     @Order(1)
@@ -23,7 +23,7 @@ public class ParkingSquareTest {
     @Test
     @Order(3)
     public void parkingSquareTestGetName(){
-    	assertEquals("TestParkingSqaure", parkingSquare.getName());
+    	assertEquals("No Name", parkingSquare.getName());
     }
     
     @Test

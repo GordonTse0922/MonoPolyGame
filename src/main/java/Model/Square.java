@@ -9,11 +9,6 @@ public abstract class Square {
 		this.index = index;
 	}
 	
-	public Square() {
-		this.name = "No Name";
-		this.index = 0;
-	}
-	
 	public void setName(String name) {
 		this.name = name;
 	}

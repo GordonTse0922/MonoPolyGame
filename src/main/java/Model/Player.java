@@ -29,7 +29,11 @@ public class Player {
         return position;
     }
 
-    public void setPosition(int position) {this.position=position;}
+    public void move(int moves) {
+        int temp=this.position+moves;
+        if(temp%19==0) this.position=1;
+        else this.position=temp%19;
+    }
 
     public void setBroke(boolean flag) {this.broke=flag;}
 

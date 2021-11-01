@@ -36,9 +36,10 @@ public class Game {
         return dice.toss();
     }
 
-    public void movePlayer(String name){
+    public void movePlayer(int id){
         //TODO move player using the dice result
-        int moves=dice.toss();
+        int moves=tossDice();
+        players[id].move(moves);
     }
 
     public boolean isEnded(){
@@ -62,5 +63,8 @@ public class Game {
         //TODO next turn
     }
 
+    public PlayerController[] getPlayers(){
+        return players;
+    }
 
 }

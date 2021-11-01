@@ -12,8 +12,8 @@ public class PlayerController {
         view=new PlayerView();
     }
 
-    public void setPosition(int pos){
-        player.setPosition(pos);
+    public void move(int pos){
+        player.move(pos);
     }
 
     public void setBroke(){

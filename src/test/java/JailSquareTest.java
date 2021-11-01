@@ -1,9 +1,7 @@
 
-
+import Model.JailSquare;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
-
-import Model.JailSquare;
 
 public class JailSquareTest {
 	JailSquare jailSquare = new JailSquare("TestJailSqaure", 0);
@@ -44,5 +42,17 @@ public class JailSquareTest {
     public void jailSquareTestSetGetIndex() {
     	jailSquare.setIndex(1);
     	assertTrue(jailSquare.getIndex() == 1);
+    }
+    
+    @Test
+    @Order(7)
+    public void jailSquareTestGoToJailReturnType() {
+    	assertTrue(Boolean.class.isInstance(jailSquare.goToJail()));
+    }
+    
+    @Test
+    @Order(8)
+    public void jailSquareTestGoToJail() {
+    	assertTrue(jailSquare.goToJail());
     }
 }

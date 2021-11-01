@@ -1,4 +1,5 @@
 
+
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -6,7 +7,7 @@ import Model.ChanceSquare;
 
 
 public class ChanceSquareTest {
-	ChanceSquare chanceSquare = new ChanceSquare();
+	ChanceSquare chanceSquare = new ChanceSquare( 9);
 	
     @Test
     @Order(1)
@@ -22,13 +23,13 @@ public class ChanceSquareTest {
     
     @Test
     @Order(3)
-    public void chanceSquareTestGetName(){
+    public void inJailSquareTestGetName(){
     	assertEquals("No Name", chanceSquare.getName());
     }
     
     @Test
     @Order(4)
-    public void chanceSquareTestGetIndex() {
+    public void inJailSquareTestGetIndex() {
     	assertTrue(chanceSquare.getIndex() == 0);
     }
 	
@@ -44,5 +45,18 @@ public class ChanceSquareTest {
     public void chanceSquareTestSetGetIndex() {
     	chanceSquare.setIndex(1);
     	assertTrue(chanceSquare.getIndex() == 1);
+    }
+    
+    @Test
+    @Order(7)
+    public void chanceSquareTestRandomAmountReturnType() {
+    	assertTrue(Integer.class.isInstance(chanceSquare.randomAmount()));
+    }
+    
+    @Test
+    @Order(8)
+    public void chanceSquareTestRandomAmount() {
+    	int result = chanceSquare.randomAmount();
+    	assertTrue(200 >= result && result >= -300 && result%10 == 0);
     }
 }
