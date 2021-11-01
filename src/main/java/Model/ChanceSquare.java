@@ -1,8 +1,8 @@
 package Model;
 
 public class ChanceSquare extends Square {
-	public ChanceSquare (int index) {
-		super("Chance", index);
+	public ChanceSquare (String name, int index) {
+		super(name, index);
 	}
 
 	public int randomAmount() {

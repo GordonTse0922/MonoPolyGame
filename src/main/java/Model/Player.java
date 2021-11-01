@@ -31,8 +31,8 @@ public class Player {
 
     public void move(int moves) {
         int temp=this.position+moves;
-        if(temp%19==0) this.position=1;
-        else this.position=temp%19;
+        if(temp%20==0) this.position=1;
+        else this.position=temp%20;
     }
 
     public void setBroke(boolean flag) {this.broke=flag;}

@@ -12,7 +12,7 @@ public class Dice {
     }
 
     public int toss(){
-        int total = rand.nextInt(faces)+ rand.nextInt(faces);
+        int total =2+ rand.nextInt(faces-1)+rand.nextInt(faces-1);
         return total;
     }
 }
