@@ -1,5 +1,7 @@
 package Model;
 
+import Controller.SquareController;
+
 import java.util.Map;
 
 import static java.util.Map.entry;
@@ -7,6 +9,8 @@ import static java.util.Map.entry;
 public class PropertySquare extends Square {
     private int owner;
     private int cost;
+    private String colorBand;
+    /*
     private static final Map<Integer, Integer> map = Map.ofEntries(
             entry(2, 800),
             entry(3,700),
@@ -21,11 +25,12 @@ public class PropertySquare extends Square {
             entry(18,400),
             entry(20,600)
     );
-
-    public PropertySquare (String name, int index) {
+    */
+    public PropertySquare (String name, int index, int cost, String colorBand) {
         super(name, index);
         owner=0;
-        cost=map.get(index);
+        this.cost = cost;
+        this.colorBand = colorBand;
     }
 
     public boolean isOwned(){
@@ -39,6 +44,6 @@ public class PropertySquare extends Square {
     public int getOwner(){return owner;}
 
     public int getCost(){
-        return 1;
+        return cost;
     }
 }

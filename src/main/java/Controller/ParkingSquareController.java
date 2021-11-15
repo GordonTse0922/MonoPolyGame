@@ -9,7 +9,5 @@ public class ParkingSquareController extends SquareController {
 	
 	public ParkingSquareController(ParkingSquare model, ParkingSquareView view) {
 		super(model,view);
-		this.model = model;
-		this.view = view;
 	}
 }

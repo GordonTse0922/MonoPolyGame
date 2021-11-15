@@ -1,6 +1,8 @@
 package Model;
 
 import Model.Square;
+import Controller.DiceController;
+import View.InJailSquareView;
 
 import java.util.Scanner;
 
@@ -10,7 +12,7 @@ public class InJailSquare extends Square {
 	}
 	
 	public int askPayOrDice(int diceTime) {
-		int isQuitJail = 150;
+		int isQuitJail = 0;
 		
 		//TODO 0 = Remain Jailed, 1 = QuitJail in Free, 2 = QuitJail by Pay HKD 150, -1 = Parameter Error
 		
@@ -23,6 +25,29 @@ public class InJailSquare extends Square {
 		//TODO 			Else isQuitJail = 0;
 		//TODO Else
 		//TODO 		isQuitJail = 2
+
+		if (diceTime < 3) {
+			Scanner input=new Scanner(System.in);
+
+			InJailSquareView view = new InJailSquareView();
+			view.askPayOrDice();
+			int result = input.nextInt();
+			if (result == 1) {
+				isQuitJail = 2;
+			} else {
+				DiceController dice1 = new DiceController();
+				DiceController dice2 = new DiceController();
+
+				int diceResult1 = dice1.toss();
+				int diceResult2 = dice2.toss();
+
+				if (diceResult1 == diceResult2){
+					isQuitJail = 1;
+				}
+			}
+		} else {
+			isQuitJail = 2;
+		}
 		
 		return isQuitJail;
 	}

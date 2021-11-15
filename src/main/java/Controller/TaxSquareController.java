@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.TaxSquare;
+import View.TaxSquareView;
 
 public class TaxSquareController extends SquareController {
 	private TaxSquare model;
@@ -8,8 +9,6 @@ public class TaxSquareController extends SquareController {
 	
 	public TaxSquareController(TaxSquare model, TaxSquareView view) {
 		super(model,view);
-		this.model = model;
-		this.view = view;
 	}
 	
 	public int callPayTax() {

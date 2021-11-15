@@ -7,11 +7,9 @@ import View.PropertySquareView;
 public class PropertySquareController extends SquareController {
 	private PropertySquare model;
 	private PropertySquareView view;
-	
+
 	public PropertySquareController(PropertySquare model, PropertySquareView view) {
 		super(model,view);
-		this.model = model;
-		this.view = view;
 	}
 	
 	public boolean isPropertyOwned(){
@@ -20,5 +18,13 @@ public class PropertySquareController extends SquareController {
 
 	public void setPropertyOwner(int playerId){
 		model.setOwner(playerId);
+	}
+
+	public int getPropertyOwner(){
+		return model.getOwner();
+	}
+
+	public int getPropertyCost() {
+		return model.getCost();
 	}
 }

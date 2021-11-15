@@ -9,12 +9,9 @@ public class GoSquareController extends SquareController {
 	
 	public GoSquareController(GoSquare model, GoSquareView view) {
 		super(model,view);
-		this.model = model;
-		this.view = view;
 	}
 	
-	public int gainSalary() {
-		int salary = 1500;
-		return salary;
+	public int callGainSalary() {
+		return model.gainSalary();
 	}
 }

@@ -1,5 +1,3 @@
-package test;
-
 import Model.PropertySquare;
 import org.junit.jupiter.api.*;
 import java.util.List;
@@ -8,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class PropertySquareTest {
-    PropertySquare square = new PropertySquare("test",2);
+    PropertySquare square = new PropertySquare("test", 2, 300, "Red");
 	
 	/**
 	 *  Test the return type of the getter function "getName" in Property Square Class. The return type should be String.

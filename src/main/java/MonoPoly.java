@@ -13,11 +13,10 @@ public class MonoPoly {
         //TODO load saved game
         Scanner scanner = new Scanner(System.in);
         while(!validPlayers){
-                System.out.println("Please enter number of players (2-8):");
+                System.out.println("Please enter number of players (2-6):");
                 players=scanner.nextInt();
-                validPlayers=(players>=2 && players<=8);
+                validPlayers=(players>=2 && players<=6);
         }
-        scanner.close();
         Game game= new Game(players);
         game.start();
     }

@@ -28,7 +28,9 @@ public class PlayerController {
         player.addProperty(square);
     }
 
-    public boolean getBroke(){return player.getBroke();}
+    public boolean getBroke(){
+        return player.getBroke();
+    }
 
     public int getCapital(){
         return player.getCapital();

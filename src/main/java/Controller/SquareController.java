@@ -3,7 +3,7 @@ package Controller;
 import Model.Square;
 import View.SquareView;
 
-abstract class SquareController {
+public abstract class SquareController {
 	private Square model;
 	private SquareView view;
 
