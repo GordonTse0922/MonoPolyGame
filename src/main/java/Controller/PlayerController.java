@@ -24,6 +24,10 @@ public class PlayerController {
         player.addCapital(amount);
     }
 
+    public void minusCapital(int amount){
+        player.minusCapital(amount);
+    }
+
     public void buyProperty(PropertySquareController square){
         player.addProperty(square);
     }
@@ -50,6 +54,18 @@ public class PlayerController {
 
     public void outJail(){
         player.setOutJail();
+    }
+
+    public void minusInJailDice(){
+        player.minusInJailDice();
+    }
+
+    public int getInJailDice() {
+        return player.getInJailDice();
+    }
+
+    public boolean getPlayerJailStatus(){
+        return player.getJailStatus();
     }
 
     public void udpateStatus(int id){

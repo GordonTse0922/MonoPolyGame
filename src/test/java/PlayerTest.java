@@ -186,7 +186,7 @@ public class PlayerTest {
     @Test
     @Order(17)
     public void TestAddProperties(){
-        PropertySquare model=new PropertySquare("TEST",2, 300, "Red");
+        PropertySquare model=new PropertySquare("TEST",2, "Red");
         PropertySquareView view = new PropertySquareView();
         PropertySquareController controller=new PropertySquareController(model,view);
         player.addProperty(controller);

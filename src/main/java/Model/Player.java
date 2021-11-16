@@ -15,10 +15,14 @@ public class Player {
     private List<PropertySquareController> properties;
     private CapitalController capital;
     private boolean inJail;
+    private int inJailDice;
 
     public Player(int id){
         playerId=id;
         position=1;
+        broke = false;
+        inJail = false;
+        inJailDice = 3;
         capital = new CapitalController(new Capital(),new CapitalView());
         properties= new ArrayList<>();
 //        inJail=false;
@@ -31,8 +35,12 @@ public class Player {
 
     public void move(int moves) {
         int temp=this.position+moves;
-        if(temp%20==0) this.position=1;
-        else this.position=temp%20;
+
+        if(temp%20==0){
+            this.position=1;
+        } else {
+            this.position=temp%20;
+        }
     }
 
     public void setBroke(boolean flag) {this.broke=flag;}
@@ -46,11 +54,21 @@ public class Player {
     }
 
     public void setInJail(){
+        position = 6;
         inJail=true;
     }
 
     public void setOutJail(){
         inJail=false;
+        inJailDice = 3;
+    }
+
+    public void minusInJailDice(){
+        inJailDice--;
+    }
+
+    public int getInJailDice(){
+        return inJailDice;
     }
 
     public boolean getJailStatus(){return inJail;}

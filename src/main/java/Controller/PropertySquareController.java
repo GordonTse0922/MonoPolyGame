@@ -10,6 +10,8 @@ public class PropertySquareController extends SquareController {
 
 	public PropertySquareController(PropertySquare model, PropertySquareView view) {
 		super(model,view);
+		this.model = model;
+		this.view =view;
 	}
 	
 	public boolean isPropertyOwned(){
@@ -26,5 +28,13 @@ public class PropertySquareController extends SquareController {
 
 	public int getPropertyCost() {
 		return model.getCost();
+	}
+
+	public int getPropertyRent() {
+		return model.getRent();
+	}
+
+	public String getColorBand(){
+		return model.getColorBand();
 	}
 }

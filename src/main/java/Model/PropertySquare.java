@@ -1,7 +1,5 @@
 package Model;
 
-import Controller.SquareController;
-
 import java.util.Map;
 
 import static java.util.Map.entry;
@@ -9,9 +7,10 @@ import static java.util.Map.entry;
 public class PropertySquare extends Square {
     private int owner;
     private int cost;
+    private int rent;
     private String colorBand;
-    /*
-    private static final Map<Integer, Integer> map = Map.ofEntries(
+
+    private static final Map<Integer, Integer> propertyCostMap = Map.ofEntries(
             entry(2, 800),
             entry(3,700),
             entry(5,600),
@@ -25,12 +24,34 @@ public class PropertySquare extends Square {
             entry(18,400),
             entry(20,600)
     );
-    */
-    public PropertySquare (String name, int index, int cost, String colorBand) {
+
+    private static final Map<Integer, Integer> propertyRentMap = Map.ofEntries(
+            entry(2, 90),
+            entry(3,65),
+            entry(5,60),
+            entry(7,10),
+            entry(8,40),
+            entry(10,15),
+            entry(12,75),
+            entry(14,20),
+            entry(15,25),
+            entry(17,10),
+            entry(18,25),
+            entry(20,25)
+    );
+
+    public PropertySquare (String name, int index, String colorBand) {
         super(name, index);
         owner=0;
-        this.cost = cost;
+        this.cost = propertyCostMap.get(index);
+
+        this.rent = propertyRentMap.get(index);
         this.colorBand = colorBand;
+
+        System.out.println("Name :" + name);
+        System.out.println("Index:" + index);
+        System.out.println("Rent :" + this.rent);
+        System.out.println("Cost :" + this.cost);
     }
 
     public boolean isOwned(){
@@ -45,5 +66,13 @@ public class PropertySquare extends Square {
 
     public int getCost(){
         return cost;
+    }
+
+    public int getRent() {
+        return rent;
+    }
+
+    public String getColorBand(){
+        return colorBand;
     }
 }

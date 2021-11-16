@@ -9,7 +9,9 @@ public class ChanceSquareController extends SquareController {
 	private ChanceSquareView view;
 	
 	public ChanceSquareController(ChanceSquare model, ChanceSquareView view) {
-		super(model,view);
+		super(model, view);
+		this.model = model;
+		this.view =view;
 	}
 	
 	public int callRandomAmount() {

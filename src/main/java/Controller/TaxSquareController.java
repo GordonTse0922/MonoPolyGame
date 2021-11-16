@@ -9,6 +9,8 @@ public class TaxSquareController extends SquareController {
 	
 	public TaxSquareController(TaxSquare model, TaxSquareView view) {
 		super(model,view);
+		this.model = model;
+		this.view =view;
 	}
 	
 	public int callPayTax() {

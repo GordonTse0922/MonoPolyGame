@@ -9,6 +9,8 @@ public class InJailSquareController extends SquareController {
 	
 	public InJailSquareController(InJailSquare model, InJailSquareView view) {
 		super(model,view);
+		this.model = model;
+		this.view =view;
 	}
 	
 	public int callAskPayOrDice(int diceTime) {

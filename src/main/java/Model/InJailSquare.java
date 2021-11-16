@@ -30,19 +30,27 @@ public class InJailSquare extends Square {
 			Scanner input=new Scanner(System.in);
 
 			InJailSquareView view = new InJailSquareView();
-			view.askPayOrDice();
-			int result = input.nextInt();
-			if (result == 1) {
-				isQuitJail = 2;
-			} else {
-				DiceController dice1 = new DiceController();
-				DiceController dice2 = new DiceController();
 
-				int diceResult1 = dice1.toss();
-				int diceResult2 = dice2.toss();
+			boolean playerInputFinish = false;
+			while(!playerInputFinish){
+				view.askPayOrDice();
+				int result = input.nextInt();
+				if (result == 1) {
+					isQuitJail = 2;
+					playerInputFinish = true;
+				} else if (result == 2){
+					DiceController dice1 = new DiceController();
+					DiceController dice2 = new DiceController();
 
-				if (diceResult1 == diceResult2){
-					isQuitJail = 1;
+					int diceResult1 = dice1.toss();
+					int diceResult2 = dice2.toss();
+
+					if (diceResult1 == diceResult2){
+						isQuitJail = 1;
+					}
+					playerInputFinish = true;
+				} else {
+					view.printWrongInput();
 				}
 			}
 		} else {

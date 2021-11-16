@@ -9,6 +9,8 @@ public class JailSquareController extends SquareController {
 	
 	public JailSquareController(JailSquare model, JailSquareView view) {
 		super(model,view);
+		this.model = model;
+		this.view =view;
 	}
 	
 	public boolean callGoToJail() {
