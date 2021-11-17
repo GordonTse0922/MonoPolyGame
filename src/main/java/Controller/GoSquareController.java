@@ -16,4 +16,12 @@ public class GoSquareController extends SquareController {
 	public int callGainSalary() {
 		return model.gainSalary();
 	}
+
+	public void printPassGo() {
+		view.printPassGo();
+	}
+
+	public void printInGo() {
+		view.printInGo();
+	}
 }

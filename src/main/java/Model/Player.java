@@ -36,10 +36,14 @@ public class Player {
     public void move(int moves) {
         int temp=this.position+moves;
 
-        if(temp%20==0){
-            this.position=1;
+        if (temp <= 20) {
+            if (temp % 21 == 0) {
+                this.position = 1;
+            } else {
+                this.position = temp % 21;
+            }
         } else {
-            this.position=temp%20;
+            this.position = temp % 21+1;
         }
     }
 
@@ -87,5 +91,9 @@ public class Player {
 
     public List<PropertySquareController> getProperties(){
         return properties;
+    }
+
+    public void clearProperty(){
+        properties.clear();
     }
 }

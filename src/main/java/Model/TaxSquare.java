@@ -8,7 +8,7 @@ public class TaxSquare extends Square {
 	}
 	
 	public int payTax(int playerAmount) {
-		int tax = playerAmount/10;
+		int tax = ((playerAmount/10)/10)*10;
 		//TODO Pay 10% of player's money. return -1 if parameter < 0
 		return tax;
 	}

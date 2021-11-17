@@ -47,11 +47,6 @@ public class PropertySquare extends Square {
 
         this.rent = propertyRentMap.get(index);
         this.colorBand = colorBand;
-
-        System.out.println("Name :" + name);
-        System.out.println("Index:" + index);
-        System.out.println("Rent :" + this.rent);
-        System.out.println("Cost :" + this.cost);
     }
 
     public boolean isOwned(){

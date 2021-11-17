@@ -20,8 +20,4 @@ public class MonoPoly {
         Game game= new Game(players);
         game.start();
     }
-
-
-
-
 }

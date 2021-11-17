@@ -70,7 +70,7 @@ public class InJailSqaureTest {
     @Test
     @Order(7)
     public void testInJailSquareAskPayOrDiceReturnType() {
-    	assertTrue(Integer.class.isInstance(inJailSquare.askPayOrDice(3)));
+    	assertTrue(Integer.class.isInstance(inJailSquare.askPayOrDice(3, 1, 1)));
     }
     
     /**
@@ -82,7 +82,7 @@ public class InJailSqaureTest {
     @Test
     @Order(8)
     public void testInJailSquareAskPayOrDice() {
-    	int result = inJailSquare.askPayOrDice(3);
+    	int result = inJailSquare.askPayOrDice(3,1, 1);
     	assertFalse(3 >= result && result >= 0);
     }
     
@@ -95,7 +95,7 @@ public class InJailSqaureTest {
     @Test
     @Order(9)
     public void testInJailSquareAskPayOrDiceParameter() {
-    	int result = inJailSquare.askPayOrDice(0);
+    	int result = inJailSquare.askPayOrDice(0, 1, 1);
     	assertFalse(result == 2);
     }
     
@@ -108,7 +108,7 @@ public class InJailSqaureTest {
     @Test
     @Order(10)
     public void testInJailSquareAskPayOrDiceParameterError() {
-    	int result = inJailSquare.askPayOrDice(-1);
+    	int result = inJailSquare.askPayOrDice(-1, 1, 1);
     	assertFalse(result == -1);
     }
 }

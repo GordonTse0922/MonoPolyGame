@@ -15,6 +15,12 @@ public class DiceController {
         updateAfterToss(result);
         return result;
     }
+
+    public int tossWithOutPrint(){
+        int result = dice.toss();
+        return result;
+    }
+
     public void updateAfterToss(int moves){
         view.update(getName(), moves);
     }

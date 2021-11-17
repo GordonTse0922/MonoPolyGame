@@ -3,6 +3,8 @@ package Controller;
 import Model.Player;
 import View.PlayerView;
 
+import java.util.List;
+
 public class PlayerController {
     private Player player;
     private PlayerView view;
@@ -30,6 +32,16 @@ public class PlayerController {
 
     public void buyProperty(PropertySquareController square){
         player.addProperty(square);
+    }
+
+    public List<PropertySquareController> getProperties() {
+        List<PropertySquareController> property= player.getProperties();
+        //view.printProperty(getName(), property);
+        return property;
+    }
+
+    public void clearProperty(){
+        player.clearProperty();
     }
 
     public boolean getBroke(){

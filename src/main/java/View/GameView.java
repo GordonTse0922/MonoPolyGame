@@ -3,6 +3,8 @@ package View;
 import Controller.PropertySquareController;
 import Controller.SquareController;
 
+import java.util.ArrayList;
+
 public class GameView {
     public void printMap(SquareController[] squareControllers){
         System.out.println();
@@ -181,7 +183,7 @@ public class GameView {
     }
 
     public void printTurnQuestion(int turns){
-        System.out.println("This is turn: " + turns);
+        System.out.println("\nThis is turn: " + turns);
         System.out.println("What action you want to do");
         System.out.println("1) Toss Dice");
     }
@@ -195,14 +197,21 @@ public class GameView {
     }
 
     public void printTurnsLimit(){
-       System.out.println("Turns reached 100 rounds, Game End.");
+       System.out.println("\nTurns reached 100 rounds, Game End.");
+    }
+
+    public void printTie(ArrayList<Integer> winner){
+        System.out.println("The game is a tie.");
+        for (int i = 0; i<winner.size(); i++){
+            System.out.println("Congratulations, Player " + winner.get(i));
+        }
     }
 
     public void printOnePlayerLeft(int winner){
-        System.out.println("Only one Player left. Player " + winner + " is the winner.");
+        System.out.println("\nOnly one Player left. Player " + winner + " is the winner.");
     }
 
-    public void printPassGo() {
-        System.out.println("You Passed the Go Sqaure. You earned $1500.");
+    public void printTotalMove(int moves) {
+        System.out.println("In total you moved " + moves);
     }
 }

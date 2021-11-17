@@ -13,9 +13,8 @@ public class InJailSquareController extends SquareController {
 		this.view =view;
 	}
 	
-	public int callAskPayOrDice(int diceTime) {
-		view.askPayOrDice();
-		return model.askPayOrDice(diceTime);
+	public int callAskPayOrDice(int diceTime, int dice1Result, int dice2Result) {
+		return model.askPayOrDice(diceTime, dice1Result, dice2Result);
 	}
 
 	public void printJustVisit(){
