@@ -68,9 +68,30 @@ public class PlayerController {
         return player.getJailStatus();
     }
 
-    public void udpateStatus(int id){
-        int money=player.getCapital();
-        int properties=player.getProperties().size();
-        view.printPlayerStatus(id,money,properties);
+    public void printPlayerPosition(){
+        int playerNum = getName();
+        int pos = getPosition();
+        view.printPlayerPosition(playerNum, pos);
     }
+
+    public void printPlayerStatus() {
+        int playerNum = getName();
+        int pos = getPosition();
+        int capital = getCapital();
+        boolean jail = getPlayerJailStatus();
+        int jailDice = getInJailDice();
+        view.printPlayerStatus(playerNum, pos, capital, jail, jailDice);
+    }
+
+    public void printYouBroke(){
+        int playerNum = getName();
+        view.printYouBroke(playerNum);
+    }
+
+    public void printCapital(){
+        int playerNum = getName();
+        int amount = getCapital();
+        view.printCapital(playerNum, amount);
+    }
+
 }

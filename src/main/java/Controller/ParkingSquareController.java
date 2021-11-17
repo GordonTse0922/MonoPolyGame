@@ -12,4 +12,8 @@ public class ParkingSquareController extends SquareController {
 		this.model = model;
 		this.view =view;
 	}
+
+	public void printFreeParking(){
+		view.printFreeParking();
+	}
 }

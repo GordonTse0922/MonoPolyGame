@@ -6,14 +6,20 @@ import View.DiceView;
 public class DiceController {
     private Dice dice;
     private DiceView view;
-    public  DiceController(){
-        dice = new Dice();
+    public  DiceController(int name){
+        dice = new Dice(name);
         view=new DiceView();
     }
     public int toss(){
-       return dice.toss();
+        int result = dice.toss();
+        updateAfterToss(result);
+        return result;
     }
     public void updateAfterToss(int moves){
-        view.update();
+        view.update(getName(), moves);
+    }
+
+    public int getName(){
+        return dice.getName();
     }
 }

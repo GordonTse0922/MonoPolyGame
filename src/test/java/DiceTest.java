@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
 public class DiceTest {
-    Dice dice = new Dice();
+    Dice dice = new Dice(1);
 
     /**
      *Test if the dice return value is int

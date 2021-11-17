@@ -60,52 +60,103 @@ public class GameView {
                         break;
 
                     case 3:
+                        String costS = String.format("%-" + 7 + "s", "Cost : ");
+
                         square1 = String.format("%-" + 13 + "s", " ");
-                        square2 = String.format("%-" + 13 + "s", ((PropertySquareController)squareControllers[num2-1]).getPropertyCost());
+
+                        square2 = String.format("%-" + 6 + "s", ((PropertySquareController)squareControllers[num2-1]).getPropertyCost());
+                        square2 = costS.concat(square2);
+
                         if (i != 2) {
-                            square3 = String.format("%-" + 13 + "s", ((PropertySquareController)squareControllers[num3 - 1]).getPropertyCost());
+                            square3 = String.format("%-" + 6 + "s", ((PropertySquareController)squareControllers[num3 - 1]).getPropertyCost());
+                            square3 = costS.concat(square3);
                         } else {
                             square3 = String.format("%-" + 13 + "s", " ");
                         }
                         if (i != 2) {
                             square4 = String.format("%-" + 13 + "s", " ");
                         } else {
-                            square4 = String.format("%-" + 13 + "s", ((PropertySquareController)squareControllers[num4 - 1]).getPropertyCost());
+                            square4 = String.format("%-" + 6 + "s", ((PropertySquareController)squareControllers[num4 - 1]).getPropertyCost());
+                            square4 = costS.concat(square4);
                         }
-                        square5 = String.format("%-" + 13 + "s", ((PropertySquareController)squareControllers[num5-1]).getPropertyCost());
+
+                        square5 = String.format("%-" + 6 + "s", ((PropertySquareController)squareControllers[num5-1]).getPropertyCost());
+                        square5 = costS.concat(square5);
 
                         break;
 
                     case 4:
+                        String rentS = String.format("%-" + 7 + "s", "Rent : ");
+
                         square1 = String.format("%-" + 13 + "s", " ");
-                        square2 = String.format("%-" + 13 + "s", ((PropertySquareController)squareControllers[num2-1]).getPropertyRent());
+
+                        square2 = String.format("%-" + 6 + "s", ((PropertySquareController)squareControllers[num2-1]).getPropertyRent());
+                        square2 = rentS.concat(square2);
+
                         if (i != 2) {
-                            square3 = String.format("%-" + 13 + "s", ((PropertySquareController)squareControllers[num3 - 1]).getPropertyRent());
+                            square3 = String.format("%-" + 6 + "s", ((PropertySquareController)squareControllers[num3 - 1]).getPropertyRent());
+                            square3 = rentS.concat(square3);
                         } else {
                             square3 = String.format("%-" + 13 + "s", " ");
                         }
                         if (i != 2) {
                             square4 = String.format("%-" + 13 + "s", " ");
                         } else {
-                            square4 = String.format("%-" + 13 + "s", ((PropertySquareController)squareControllers[num4 - 1]).getPropertyRent());
+                            square4 = String.format("%-" + 6 + "s", ((PropertySquareController)squareControllers[num4 - 1]).getPropertyRent());
+                            square4 = rentS.concat(square4);
                         }
-                        square5 = String.format("%-" + 13 + "s", ((PropertySquareController)squareControllers[num5-1]).getPropertyRent());
+
+                        square5 = String.format("%-" + 6 + "s", ((PropertySquareController)squareControllers[num5-1]).getPropertyRent());
+                        square5 = rentS.concat(square5);
 
                         break;
                     case 5:
+                        String noOwner = String.format("%-" + 6 + "s", "N/A");
+                        String ownerS  = String.format("%-" + 8 + "s", "Owner: P");
+                        String owner2S = String.format("%-" + 7 + "s", "Owner: ");
+
                         square1 = String.format("%-" + 13 + "s", " ");
-                        square2 = String.format("%-" + 13 + "s", ((PropertySquareController)squareControllers[num2-1]).getPropertyOwner());
+
+                        if (((PropertySquareController) squareControllers[num2 - 1]).getPropertyOwner() != 0) {
+                            square2 = String.format("%-" + 5 + "s", ((PropertySquareController) squareControllers[num2 - 1]).getPropertyOwner());
+                            square2 = ownerS.concat(square2);
+                        } else {
+                            square2 = noOwner;
+                            square2 = owner2S.concat(square2);
+                        }
+
                         if (i != 2) {
-                            square3 = String.format("%-" + 13 + "s", ((PropertySquareController)squareControllers[num3 - 1]).getPropertyOwner());
+                            if (((PropertySquareController)squareControllers[num3 - 1]).getPropertyOwner() != 0) {
+                                square3 = String.format("%-" + 5 + "s", ((PropertySquareController) squareControllers[num3 - 1]).getPropertyOwner());
+                                square3 = ownerS.concat(square3);
+                            } else {
+                                square3 = noOwner;
+                                square3 = owner2S.concat(square3);
+                            }
                         } else {
                             square3 = String.format("%-" + 13 + "s", " ");
                         }
+
                         if (i != 2) {
                             square4 = String.format("%-" + 13 + "s", " ");
                         } else {
-                            square4 = String.format("%-" + 13 + "s", ((PropertySquareController)squareControllers[num4 - 1]).getPropertyOwner());
+                            if (((PropertySquareController) squareControllers[num4 - 1]).getPropertyOwner() != 0) {
+                                square4 = String.format("%-" + 5 + "s", ((PropertySquareController) squareControllers[num4 - 1]).getPropertyOwner());
+                                square4 = ownerS.concat(square4);
+                            } else {
+                                square4 = noOwner;
+                                square4 = owner2S.concat(square4);
+                            }
+
                         }
-                        square5 = String.format("%-" + 13 + "s", ((PropertySquareController)squareControllers[num5-1]).getPropertyOwner());
+
+                        if (((PropertySquareController) squareControllers[num5 - 1]).getPropertyOwner() != 0) {
+                            square5 = String.format("%-" + 5 + "s", ((PropertySquareController) squareControllers[num5 - 1]).getPropertyOwner());
+                            square5 = ownerS.concat(square5);
+                        } else {
+                            square5 = noOwner;
+                            square5 = owner2S.concat(square5);
+                        }
 
                         break;
                 }
@@ -143,41 +194,12 @@ public class GameView {
         System.out.println("Wrong Pos");
     }
 
-    public void printPlayerPosition(int playerNum, int pos){
-        System.out.println("Player " + playerNum + ". You are in Square No.: " + pos + ".");
-    }
-
-    public void printPlayerStatus(int playerNum, int pos, int capital, boolean jail, int jailDice){
-        System.out.println("Player " + playerNum + ". You are in Square No.: " + pos + ".");
-        System.out.println("Money : $" + capital);
-        System.out.println("Jailed: " + jail);
-        System.out.println("DiceJa: " + jailDice);
-    }
-
     public void printTurnsLimit(){
        System.out.println("Turns reached 100 rounds, Game End.");
     }
 
     public void printOnePlayerLeft(int winner){
         System.out.println("Only one Player left. Player " + winner + " is the winner.");
-    }
-
-    public void printBuyProperty(String propertyName, int propertyCost) {
-        System.out.println(propertyName + " is owned by no one. Do you want to buy " + propertyName);
-        System.out.println("1) Buy (-" + propertyCost + ")");
-        System.out.println("2) Leave");
-    }
-
-    public void printPayRent(String propertyName, int owner, int rent){
-        System.out.println(propertyName + " is owned by Player " + owner + ". You have to pay rent $" + rent);
-    }
-
-    public void printFreeParking(){
-        System.out.println("Free Parking. No effect.");
-    }
-
-    public void printJustVisit(){
-        System.out.println("You visited the Jail. No effect.");
     }
 
     public void printPassGo() {

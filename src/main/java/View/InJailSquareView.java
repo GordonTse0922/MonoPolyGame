@@ -10,4 +10,8 @@ public class InJailSquareView extends SquareView {
     public void printWrongInput(){
         System.out.println("Wrong Input");
     }
+
+    public void printJustVisit(){
+        System.out.println("You visited the Jail. No effect.");
+    }
 }

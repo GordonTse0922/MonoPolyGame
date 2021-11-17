@@ -37,4 +37,22 @@ public class PropertySquareController extends SquareController {
 	public String getColorBand(){
 		return model.getColorBand();
 	}
+
+	public void printPayRent(){
+		String propertyName = getSquareName();
+		int owner = getPropertyOwner();
+		int rent = getPropertyRent();
+		view.printPayRent(propertyName, owner, rent);
+	}
+
+	public void printBuyProperty() {
+		String propertyName = getSquareName();
+		int propertyCost = getPropertyCost();
+		view.printBuyProperty(propertyName, propertyCost);
+	}
+
+	public void printYourProperty(){
+		String propertyName = getSquareName();
+		view.printYourProperty(propertyName);
+	}
 }

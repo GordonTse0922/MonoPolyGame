@@ -23,12 +23,12 @@ public class Game {
 
     public Game(int totalPlayers){
         turns=0;
-        dice1= new DiceController();
-        dice2= new DiceController();
+        dice1= new DiceController(1);
+        dice2= new DiceController(2);
         view = new GameView();
         players=new PlayerController[totalPlayers];
         for (int i=0;i<totalPlayers;i++){
-            Player player = new Player(0);
+            Player player = new Player(i+1);
             players[i]=new PlayerController(player);
         }
         //TODO add different kind of squares based on the board description
@@ -49,78 +49,97 @@ public class Game {
                 break;
             } else {
                 for (int i = 0; i < players.length; i++) {
-                    boolean playerTurnFinish = false;
-                    view.printMap(squareControllers);
-                    view.printPlayerStatus(i+1, players[i].getPosition(), players[i].getCapital(), players[i].getPlayerJailStatus(), players[i].getInJailDice());
-                    view.printTurnQuestion(turns);
+                    if (players[i].getCapital() >= 0) {
+                        boolean playerTurnFinish = false;
+                        view.printMap(squareControllers);
+                        players[i].printPlayerStatus();
 
-                    while (!playerTurnFinish){
-                        Scanner input = new Scanner(System.in);
+                        while (!playerTurnFinish) {
+                            Scanner input = new Scanner(System.in);
 
-                        if (players[i].getPosition() == 6 && players[i].getPlayerJailStatus()){
-                            int result = ((InJailSquareController) squareControllers[players[i].getPosition()-1]).callAskPayOrDice(players[i].getInJailDice());
+                            if (players[i].getPosition() == 6 && players[i].getPlayerJailStatus()) {
+                                System.out.println("InJailed====================Test+++++++++++");
+                                int result = ((InJailSquareController) squareControllers[players[i].getPosition() - 1]).callAskPayOrDice(players[i].getInJailDice());
 
-                            if (result == 0){
-                                players[i].minusInJailDice();
-                            } else if (result == 1){
-                                players[i].outJail();
-                            } else {
-                                players[i].outJail();
-                                players[i].minusCapital(150);
-                            }
-                            playerTurnFinish = true;
-                        } else {
-                            int result = input.nextInt();
-
-                            if (result == 1) {
-                                movePlayer(i);
-                                view.printPlayerPosition(i+1, players[i].getPosition());
-                                int finalI = i;
-                                if (IntStream.of(propertySquarePos).anyMatch(x -> x == players[finalI].getPosition())){
-                                    int owner = ((PropertySquareController) squareControllers[players[i].getPosition()-1]).getPropertyOwner();
-                                    if (owner == 0){
-                                        view.printBuyProperty(((PropertySquareController) squareControllers[players[i].getPosition()-1]).getSquareName(), ((PropertySquareController) squareControllers[players[i].getPosition()-1]).getPropertyCost());
-
-                                        boolean playerBuy = false;
-                                        while (!playerBuy){
-                                            int result2 = input.nextInt();
-
-                                            if (result2 == 1){
-                                                players[i].minusCapital(((PropertySquareController) squareControllers[players[i].getPosition()-1]).getPropertyCost());
-                                                ((PropertySquareController) squareControllers[players[i].getPosition()-1]).setPropertyOwner(i+1);
-                                                playerBuy = true;
-                                            } else if (result2 == 2) {
-                                                playerBuy = true;
-                                            } else {
-                                                view.printWrongInput();
-                                                continue;
-                                            }
-                                        }
-                                    } else {
-                                        view.printPayRent(((PropertySquareController) squareControllers[players[i].getPosition()-1]).getSquareName(), owner, ((PropertySquareController) squareControllers[players[i].getPosition()-1]).getPropertyRent());
-                                        players[i].minusCapital(((PropertySquareController) squareControllers[players[i].getPosition()-1]).getPropertyRent());
-                                    }
-                                } else if (IntStream.of(chanceSquarePos).anyMatch(x -> x == players[finalI].getPosition())){
-                                    int amount = ((ChanceSquareController) squareControllers[players[i].getPosition()-1]).callRandomAmount();
-                                    players[i].addCapital(amount);
-                                } else if (players[finalI].getPosition() == 4){
-                                    int amount = ((TaxSquareController) squareControllers[players[i].getPosition()-1]).callPayTax();
-                                    players[i].minusCapital(amount);
-                                } else if (players[finalI].getPosition() == 11) {
-                                    view.printFreeParking();
-                                } else if (players[i].getPosition() == 6) {
-                                    view.printJustVisit();
-                                } else if (players[finalI].getPosition() == 16){
-                                    players[i].inJail();
+                                if (result == 0) {
+                                    players[i].minusInJailDice();
+                                } else if (result == 1) {
+                                    players[i].outJail();
                                 } else {
-                                    view.printWrongPos();
+                                    players[i].outJail();
+                                    players[i].minusCapital(150);
+                                    players[i].printCapital();
                                 }
                                 playerTurnFinish = true;
                             } else {
-                                view.printWrongInput();
-                                continue;
+                                view.printTurnQuestion(turns);
+
+                                int result = input.nextInt();
+
+                                if (result == 1) {
+                                    movePlayer(i);
+                                    players[i].printPlayerPosition();
+                                    int finalI = i;
+                                    if (IntStream.of(propertySquarePos).anyMatch(x -> x == players[finalI].getPosition())) {
+                                        int owner = ((PropertySquareController) squareControllers[players[i].getPosition() - 1]).getPropertyOwner();
+                                        if (owner == 0) {
+                                            ((PropertySquareController) squareControllers[players[i].getPosition() - 1]).printBuyProperty();
+
+                                            boolean playerBuy = false;
+                                            while (!playerBuy) {
+                                                int result2 = input.nextInt();
+
+                                                if (result2 == 1) {
+                                                    players[i].minusCapital(((PropertySquareController) squareControllers[players[i].getPosition() - 1]).getPropertyCost());
+                                                    ((PropertySquareController) squareControllers[players[i].getPosition() - 1]).setPropertyOwner(i + 1);
+                                                    playerBuy = true;
+                                                } else if (result2 == 2) {
+                                                    playerBuy = true;
+                                                } else {
+                                                    view.printWrongInput();
+                                                    continue;
+                                                }
+                                            }
+                                        } else {
+                                            if (((PropertySquareController) squareControllers[players[i].getPosition() - 1]).getPropertyOwner() != i + 1) {
+                                                ((PropertySquareController) squareControllers[players[i].getPosition() - 1]).printPayRent();
+                                                players[i].minusCapital(((PropertySquareController) squareControllers[players[i].getPosition() - 1]).getPropertyRent());
+                                                players[((PropertySquareController) squareControllers[players[i].getPosition() - 1]).getPropertyOwner()-1].addCapital(((PropertySquareController) squareControllers[players[i].getPosition() - 1]).getPropertyRent());
+
+                                                players[i].printCapital();
+                                                players[((PropertySquareController) squareControllers[players[i].getPosition() - 1]).getPropertyOwner()-1].printCapital();
+                                            } else {
+                                                ((PropertySquareController) squareControllers[players[i].getPosition() - 1]).printYourProperty();
+                                            }
+                                        }
+                                    } else if (IntStream.of(chanceSquarePos).anyMatch(x -> x == players[finalI].getPosition())) {
+                                        int amount = ((ChanceSquareController) squareControllers[players[i].getPosition() - 1]).callRandomAmount();
+                                        players[i].addCapital(amount);
+                                    } else if (players[finalI].getPosition() == 4) {
+                                        int amount = ((TaxSquareController) squareControllers[players[i].getPosition() - 1]).callPayTax(players[i].getCapital());
+                                        System.out.println("Test Tax Amount :" + amount);
+                                        players[i].addCapital(-amount);
+
+                                        players[i].printCapital();
+                                    } else if (players[finalI].getPosition() == 11) {
+                                        ((ParkingSquareController) squareControllers[players[i].getPosition() - 1]).printFreeParking();
+                                    } else if (players[i].getPosition() == 6) {
+                                        ((InJailSquareController) squareControllers[players[i].getPosition() - 1]).printJustVisit();
+                                    } else if (players[finalI].getPosition() == 16) {
+                                        ((JailSquareController) squareControllers[players[i].getPosition() - 1]).printInJailed();
+                                        players[i].inJail();
+                                    } else {
+                                        view.printWrongPos();
+                                    }
+                                    playerTurnFinish = true;
+                                } else {
+                                    view.printWrongInput();
+                                    continue;
+                                }
                             }
                         }
+                    } else {
+                        players[i].printYouBroke();
                     }
                 }
                 nextTurn();

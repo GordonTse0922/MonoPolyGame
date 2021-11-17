@@ -12,8 +12,8 @@ public class JailSquareController extends SquareController {
 		this.model = model;
 		this.view =view;
 	}
-	
-	public boolean callGoToJail() {
-		return model.goToJail();
+
+	public void printInJailed() {
+		view.printInJailed();
 	}
 }

@@ -15,6 +15,8 @@ public class ChanceSquareController extends SquareController {
 	}
 	
 	public int callRandomAmount() {
-		return model.randomAmount();
+		int amount = model.randomAmount();
+		view.printChanceAmount(amount);
+		return amount;
 	}
 }

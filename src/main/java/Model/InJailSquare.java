@@ -39,8 +39,8 @@ public class InJailSquare extends Square {
 					isQuitJail = 2;
 					playerInputFinish = true;
 				} else if (result == 2){
-					DiceController dice1 = new DiceController();
-					DiceController dice2 = new DiceController();
+					DiceController dice1 = new DiceController(1);
+					DiceController dice2 = new DiceController(2);
 
 					int diceResult1 = dice1.toss();
 					int diceResult2 = dice2.toss();

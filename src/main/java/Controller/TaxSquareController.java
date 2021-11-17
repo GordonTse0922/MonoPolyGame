@@ -13,7 +13,9 @@ public class TaxSquareController extends SquareController {
 		this.view =view;
 	}
 	
-	public int callPayTax() {
-		return model.payTax(1500);
+	public int callPayTax(int playerCapital) {
+		int amount = model.payTax(playerCapital);
+		view.printPayTaxAmount(amount);
+		return amount;
 	}
 }
