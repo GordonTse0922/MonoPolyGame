@@ -27,10 +27,12 @@ public class Game {
     private static int [] chanceSquarePos = {9,13,19};
 
     public Game(){
+        System.out.println("TEST");
         List<Integer> data=load();
         int totalPlayers=data.get(0);
         int []pos={data.get(15),data.get(16)};
         int [] caps={data.get(17),data.get(18)};
+        int [] jails={data.get(19),data.get(20)};
         turns=data.get(1);
         dice1= new DiceController(1);
         dice2= new DiceController(2);
@@ -39,7 +41,7 @@ public class Game {
         for (int i=0;i<totalPlayers;i++){
             Player player = new Player(i+1);
             players[i]=new PlayerController(player);
-            players[i].load(pos[i],caps[i]);
+            players[i].load(pos[i],caps[i],jails[i]);
         }
         //TODO add different kind of squares based on the board description
         squareControllers=new SquareController[numOfSquare];
@@ -250,7 +252,7 @@ public class Game {
         //TODO implement save game
     }
 
-    public List<Integer> load() {
+    public List load() {
         //TODO implement load game
         System.out.println("Welcome back");
         List<Integer> savedData= new ArrayList<>();
@@ -278,13 +280,14 @@ public class Game {
                 int temp = Integer.parseInt(br.readLine());
                 savedData.add(temp);
             }
+            savedData.add(Integer.parseInt(br.readLine()));
 
             br.close();
 
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+//            e.printStackTrace();
         } catch (IOException e) {
-            e.printStackTrace();
+//            e.printStackTrace();
         }
         return savedData;
     }

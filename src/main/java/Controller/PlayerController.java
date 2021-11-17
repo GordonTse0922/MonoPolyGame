@@ -12,10 +12,10 @@ public class PlayerController {
         view=new PlayerView();
     }
 
-    public void load(int pos,int capital){
+    public void load(int pos,int capital, int jail){
         player.setPositionFromSave(capital);
         player.setCapitalFromSave(pos);
-//        player.setJailStatusFromSave(jail);
+        player.setJailStatusFromSave(jail);
     }
 
     public void move(int pos){
@@ -36,6 +36,7 @@ public class PlayerController {
 
     public void buyProperty(PropertySquareController square){
         player.addProperty(square);
+        square.setPropertyOwner(player.getId());
     }
 
     public boolean getBroke(){

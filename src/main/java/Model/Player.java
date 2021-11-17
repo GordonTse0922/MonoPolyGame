@@ -34,6 +34,9 @@ public class Player {
     public void setCapitalFromSave(int amount){
         position=amount;
     }
+    public void setJailStatusFromSave(int jail){
+        inJail=jail==1?true:false;
+    }
     public int getPosition(){
         //TODO return current position
         return position;
