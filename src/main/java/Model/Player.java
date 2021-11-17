@@ -28,6 +28,12 @@ public class Player {
 //        inJail=false;
     }
 
+    public void setPositionFromSave(int pos){
+        position=pos;
+    }
+    public void setCapitalFromSave(int amount){
+        position=amount;
+    }
     public int getPosition(){
         //TODO return current position
         return position;

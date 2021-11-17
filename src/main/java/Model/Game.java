@@ -3,7 +3,12 @@ package Model;
 import Controller.*;
 import View.*;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.stream.IntStream;
@@ -21,6 +26,24 @@ public class Game {
     private static int [] propertySquarePos = {2,3,5,7,8,10,12,14,15,17,18,20};
     private static int [] chanceSquarePos = {9,13,19};
 
+    public Game(){
+        List<Integer> data=load();
+        int totalPlayers=data.get(0);
+        int []pos={data.get(15),data.get(16)};
+        int [] caps={data.get(17),data.get(18)};
+        turns=data.get(1);
+        dice1= new DiceController(1);
+        dice2= new DiceController(2);
+        view = new GameView();
+        players=new PlayerController[totalPlayers];
+        for (int i=0;i<totalPlayers;i++){
+            Player player = new Player(i+1);
+            players[i]=new PlayerController(player);
+            players[i].load(pos[i],caps[i]);
+        }
+        //TODO add different kind of squares based on the board description
+        squareControllers=new SquareController[numOfSquare];
+    }
     public Game(int totalPlayers){
         turns=0;
         dice1= new DiceController(1);
@@ -39,11 +62,7 @@ public class Game {
         createMap ();
 
         while (turns <= 100) {
-            //players[0].setBroke();
-            //players[2].setBroke();
-
             checkBroke();
-
             if (isEnded()){
                 view.printOnePlayerLeft(1);
                 break;
@@ -231,11 +250,46 @@ public class Game {
         //TODO implement save game
     }
 
-    public void load(){
+    public List<Integer> load() {
         //TODO implement load game
+        System.out.println("Welcome back");
+        List<Integer> savedData= new ArrayList<>();
+        try {
+            BufferedReader br = new BufferedReader(new FileReader("saveFile.txt"));
+
+            int totalPlayers = Integer.parseInt(br.readLine());
+            int round = Integer.parseInt(br.readLine());
+            savedData.add(totalPlayers);
+            savedData.add(round);
+            for (int i = 0; i < 12; i++) { // 0 = no owners
+                int temp = Integer.parseInt(br.readLine());
+                savedData.add(temp);
+            }
+            System.out.println(savedData.size());
+
+             savedData.add(Integer.parseInt(br.readLine()));
+
+            for (int j = 0; j < totalPlayers; j++) {
+                int temp = Integer.parseInt(br.readLine());
+                savedData.add(temp);
+            }
+
+            for (int k = 0; k < totalPlayers; k++) {
+                int temp = Integer.parseInt(br.readLine());
+                savedData.add(temp);
+            }
+
+            br.close();
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return savedData;
     }
 
-    public void nextTurn(){
+        public void nextTurn(){
         //TODO next turn
         turns ++;
     }

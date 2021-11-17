@@ -12,6 +12,12 @@ public class PlayerController {
         view=new PlayerView();
     }
 
+    public void load(int pos,int capital){
+        player.setPositionFromSave(capital);
+        player.setCapitalFromSave(pos);
+//        player.setJailStatusFromSave(jail);
+    }
+
     public void move(int pos){
         player.move(pos);
     }
