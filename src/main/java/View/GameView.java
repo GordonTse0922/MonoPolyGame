@@ -185,7 +185,7 @@ public class GameView {
     public void printTurnQuestion(int turns){
         System.out.println("\nThis is turn: " + turns);
         System.out.println("What action you want to do");
-        System.out.println("1) Toss Dice");
+        System.out.println("1) Toss Dice\n2) Save and leave");
     }
 
     public void printWrongInput(){

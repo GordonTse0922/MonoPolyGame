@@ -1,5 +1,3 @@
-package test;
-
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -63,23 +61,5 @@ public class JailSquareTest {
     public void testJailSquareSetGetIndex() {
     	jailSquare.setIndex(1);
     	assertTrue(jailSquare.getIndex() == 1);
-    }
-    
-    /**
-     *  Test the return type of the function "goToJail" in Jail Square Class. The return type should be Boolean.
-     */
-    @Test
-    @Order(7)
-    public void testJailSquareGoToJailReturnType() {
-    	assertTrue(Boolean.class.isInstance(jailSquare.goToJail()));
-    }
-    
-    /**
-     *  Test the return content of the function "goToJail" in Jail Square Class. The return content should be True.
-     */
-    @Test
-    @Order(8)
-    public void testJailSquareGoToJail() {
-    	assertTrue(jailSquare.goToJail());
     }
 }

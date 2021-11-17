@@ -23,7 +23,7 @@ public class CapitalController {
     }
 
     public void showUpdate(){
-        //TODO print view
+
         view.printUpdate();
     }
 

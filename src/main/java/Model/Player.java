@@ -32,10 +32,15 @@ public class Player {
         position=pos;
     }
     public void setCapitalFromSave(int amount){
-        position=amount;
+        capital.add(-1500);
+        capital.add(amount);
     }
     public void setJailStatusFromSave(int jail){
         inJail=jail==1?true:false;
+
+        if(inJail){
+            setInJail();
+        }
     }
     public int getPosition(){
         //TODO return current position

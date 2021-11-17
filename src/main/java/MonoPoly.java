@@ -15,11 +15,11 @@ public class MonoPoly {
         //TODO load saved game
         File f = new File("saveFile.txt");
         if(f.exists() && !f.isDirectory()) {
-            System.out.println("Save Game Detected, do you want to load a saved game or start a new one?");
+            System.out.println("Save Game Detected, do you want to load a saved game or start a new one?\n1      ) Load Game\nAny Key) New Game");
             int load = scanner.nextInt();
             if (load == 1) {
                 Game game = new Game();
-//                game.start();
+                game.start();
             }
             else{
                 while (!validPlayers) {
@@ -42,13 +42,4 @@ public class MonoPoly {
             game.start();
         }
     }
-<<<<<<< HEAD
-=======
-
-
-
-
-
-
->>>>>>> origin/main
 }
