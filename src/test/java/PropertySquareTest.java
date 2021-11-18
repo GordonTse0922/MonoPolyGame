@@ -63,33 +63,85 @@ public class PropertySquareTest {
     	square.setIndex(1);
     	assertTrue(square.getIndex() == 1);
     }
-    
+
     /**
-     *  Test the return content of the function "isOwned" in Property Square Class. The return content should be False.
-     *  
-     *  We default the result is wrong because we have not implement the function "askPayOrDice".
+     *  Test the return type of the function "getOwner" in Property Square Class. The return type should be Integer.
      */
     @Test
-    public void testOwned(){
-        assertFalse(square.isOwned());
+    public void testGetOwnedType(){
+        int result=square.getOwner();
+        assertTrue(Integer.class.isInstance(result));
     }
     
     /**
-     *  Test the return type of the function "getCost" in Property Square Class. The return type should be Integer.
+     *  Test the return content of the function "getOwner" in Property Square Class. The return content should be 0.
      */
     @Test
-    public void testCostType(){
-        int result=square.getCost();
-        assertTrue(Integer.class.isInstance(result));
+    public void testGetOwned(){
+        assertTrue(square.getOwner() == 0);
     }
 
     /**
      *  Test the setter function "setOwner" in Property Square Class. The return content should be 1.
      */
     @Test
-    public void testOwner(){
+    public void testSetOwned(){
         square.setOwner(1);
-        int result= square.getOwner();
-        assertTrue(result==1);
+        assertTrue(square.getOwner() == 1);
     }
+    
+    /**
+     *  Test the return type of the function "getCost" in Property Square Class. The return type should be Integer.
+     */
+    @Test
+    public void testGetCostType(){
+        int result=square.getCost();
+        assertTrue(Integer.class.isInstance(result));
+    }
+
+    /**
+     *  Test the return content of the function "getCost" in Property Square Class. The return content should be 800.
+     */
+    @Test
+    public void testGetCost(){
+        int result=square.getCost();
+        assertTrue(result == 800);
+    }
+
+    /**
+     *  Test the return type of the function "getRents" in Property Square Class. The return type should be Integer.
+     */
+    @Test
+    public void testGetRentType(){
+        int result=square.getRent();
+        assertTrue(Integer.class.isInstance(result));
+    }
+
+    /**
+     *  Test the return content of the function "getRent" in Property Square Class. The return content should be 90.
+     */
+    @Test
+    public void testGetRent(){
+        int result=square.getRent();
+        assertTrue(result == 90);
+    }
+
+    /**
+     *  Test the return type of the function "getColorBand" in Property Square Class. The return type should be String.
+     */
+    @Test
+    public void testGetColorBandType(){
+        String result=square.getColorBand();
+        assertTrue(String.class.isInstance(result));
+    }
+
+    /**
+     *  Test the return content of the function "getColorBand" in Property Square Class. The return content should be 90.
+     */
+    @Test
+    public void testGetColorBand(){
+        String result=square.getColorBand();
+        assertEquals("Red", result);
+    }
+
 }

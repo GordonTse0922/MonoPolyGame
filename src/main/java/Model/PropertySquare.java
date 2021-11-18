@@ -49,10 +49,6 @@ public class PropertySquare extends Square {
         this.colorBand = colorBand;
     }
 
-    public boolean isOwned(){
-        return false;
-    }
-
     public void setOwner(int playerId){
         owner=playerId;
     }

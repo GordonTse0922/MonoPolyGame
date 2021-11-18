@@ -13,10 +13,6 @@ public class PropertySquareController extends SquareController {
 		this.model = model;
 		this.view =view;
 	}
-	
-	public boolean isPropertyOwned(){
-		return model.isOwned();
-	}
 
 	public void setPropertyOwner(int playerId){
 		model.setOwner(playerId);

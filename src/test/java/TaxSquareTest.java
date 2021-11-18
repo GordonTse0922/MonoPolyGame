@@ -82,15 +82,26 @@ public class TaxSquareTest {
     	int result = taxSquare.payTax(1500);
     	assertTrue(result == 150);
     }
+
+    /**
+     *  Test the return content of the function "payTax" in Tax Square Class.
+     *  The return content should be 10% of the parameter, in this case should be 150.
+     */
+    @Test
+    @Order(9)
+    public void testTaxSquarePayTax2() {
+        int result = taxSquare.payTax(0);
+        assertTrue(result == 0);
+    }
     
     /**
      *  Test the parameter input of the function "payTax" in Tax Square Class.
      *  If the parameter input is in the error range, the return content should be -1.
      */
     @Test
-    @Order(9)
+    @Order(10)
     public void testTaxSquarePayTaxParameterError() {
     	int result = taxSquare.payTax(-1);
-    	assertFalse(result == -1);
+    	assertTrue(result == -1);
     }
 }
