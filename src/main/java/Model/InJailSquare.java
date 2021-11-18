@@ -14,7 +14,7 @@ public class InJailSquare extends Square {
 	public int askPayOrDice(int diceTime, int dice1Result, int dice2Result) {
 		int isQuitJail = 0;
 		InJailSquareView view = new InJailSquareView();
-		if (diceTime >=0 &&diceTime<3) {
+		if (diceTime >0 &&diceTime<=3) {
 			Scanner input3=new Scanner(System.in);
 			boolean playerInputFinish = false;
 			while(!playerInputFinish){

@@ -51,11 +51,7 @@ public class Player {
         int temp=this.position+moves;
 
         if (temp <= 20) {
-            if (temp % 21 == 0) {
-                this.position = 1;
-            } else {
-                this.position = temp % 21;
-            }
+            this.position = temp % 21;
         } else {
             this.position = temp % 21+1;
         }

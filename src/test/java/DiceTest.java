@@ -22,6 +22,17 @@ public class DiceTest {
     @Test
     public void diceTestWithInRange(){
         int result=dice.toss();
-        assertTrue(2 <= result && result <= 8);
+        assertTrue(1 <= result && result <= 4);
+    }
+
+    @Test
+    public void diceTestGetNameReturnType(){
+        assertTrue(Integer.class.isInstance(dice.getName()));
+    }
+
+    @Test
+    public void diceTestGetName(){
+        int result=dice.getName();
+        assertTrue(result == 1);
     }
 }

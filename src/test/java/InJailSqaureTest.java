@@ -71,6 +71,8 @@ public class InJailSqaureTest {
     @Test
     @Order(7)
     public void testInJailSquareAskPayOrDiceReturnType() {
+        String data = "1";
+        System.setIn(new ByteArrayInputStream(data.getBytes()));
     	assertTrue(Integer.class.isInstance(inJailSquare.askPayOrDice(3, 1, 1)));
     }
     
@@ -83,46 +85,41 @@ public class InJailSqaureTest {
     @Test
     @Order(8)
     public void testInJailSquareAskPayOrDice() {
+        String data = "1";
+        System.setIn(new ByteArrayInputStream(data.getBytes()));
     	int result = inJailSquare.askPayOrDice(3,1, 1);
     	assertTrue(result==2);
     }
-    
-    /**
-     *  Test the return content of the function "askPayOrDice" in InJail Square Class. 
-     *  If the parameter is = 0, the return content should be 2.
-     *  
-     *  We default the result is wrong because we have not implement the function "askPayOrDice".
-     */
+
     @Test
     @Order(9)
-    public void testInJailSquareAskPayOrDiceParameter() {
-        // MOCK System.in
-        String data = "1";
-        System.setIn(new ByteArrayInputStream(data.getBytes()));
-    	int result = inJailSquare.askPayOrDice(0, 1, 1);
-    	assertTrue(result == 2);
+    public void testInJailSquareAskPayOrDice2() {
+        int result = inJailSquare.askPayOrDice(0,1, 1);
+        assertTrue(result==2);
     }
+
     @Test
     @Order(10)
-    public void testInJailSquareAskPayOrDiceParameter_2() {
-        // MOCK System.in
+    public void testInJailSquareAskPayOrDice3() {
         String data = "2";
         System.setIn(new ByteArrayInputStream(data.getBytes()));
-        int result = inJailSquare.askPayOrDice(0, 1, 1);
-        // MOCK System.in
-        assertTrue(result == 1);
+        int result = inJailSquare.askPayOrDice(3,1, 1);
+        assertTrue(result==1);
     }
-    
-    /**
-     *  Test the return content of the function "askPayOrDice" in InJail Square Class.
-     *  If the parameter input is error, the return content should be -1.
-     *  
-     *  We default the result is wrong because we have not implement the function "askPayOrDice".
-     */
+
     @Test
-    @Order(10)
-    public void testInJailSquareAskPayOrDiceParameterError() {
-    	int result = inJailSquare.askPayOrDice(-1, 1, 1);
-    	assertFalse(result == -1);
+    @Order(11)
+    public void testInJailSquareAskPayOrDice4() {
+        String data = "2";
+        System.setIn(new ByteArrayInputStream(data.getBytes()));
+        int result = inJailSquare.askPayOrDice(3,2, 1);
+        assertTrue(result==0);
+    }
+    @Test
+    @Order(11)
+    public void testInJailSquareAskPayOrDiceErrorInput() {
+        System.setIn(new ByteArrayInputStream(("4" + System.lineSeparator() + "2").getBytes()));
+        int result = inJailSquare.askPayOrDice(3,2, 1);
+        assertTrue(result==0);
     }
 }
