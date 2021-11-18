@@ -118,10 +118,6 @@ public class Game {
     }
 
     public void start() {
-        //Test
-        //players[1].addCapital(-1500);
-        //Test
-
         while (turns <= 100){
             ArrayList<Integer> notBroke = new ArrayList<Integer>();
             notBroke = isEnded();
@@ -277,7 +273,25 @@ public class Game {
             ArrayList<Integer> notBroke = new ArrayList<Integer>();
             notBroke = isEnded();
 
-            view.printTie(notBroke);
+            int highestCap = 0;
+            int highestCapPlayer = 0;
+            for (int i = 0; i<notBroke.size(); i++){
+                if (players[notBroke.get(i)-1].getCapital() > highestCap){
+                    highestCap = players[notBroke.get(i)-1].getCapital();
+                    highestCapPlayer = notBroke.get(i);
+                }
+            }
+
+            ArrayList<Integer> winner = new ArrayList<Integer>();
+            winner.add(highestCapPlayer);
+
+            for (int i = 0; i<notBroke.size(); i++){
+                if (players[notBroke.get(i)-1].getCapital() == players[winner.get(0)-1].getCapital() && notBroke.get(i) != winner.get(0)){
+                    winner.add(notBroke.get(i));
+                }
+            }
+
+            view.printTie(winner);
         }
 
             //TODO Start game:
