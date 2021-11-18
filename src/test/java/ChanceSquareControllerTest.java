@@ -8,9 +8,8 @@ import Model.ChanceSquare;
 import View.ChanceSquareView;
 
 public class ChanceSquareControllerTest {
-	ChanceSquare chanceSquare = new ChanceSquare(9);
+	ChanceSquare chanceSquare = new ChanceSquare("test",9);
 	ChanceSquareView chanceSquareView = new ChanceSquareView();
-	
 	ChanceSquareController chanceSquareController = new ChanceSquareController(chanceSquare, chanceSquareView);
 	
 	
