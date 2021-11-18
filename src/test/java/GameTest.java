@@ -9,6 +9,15 @@ import Model.Game;
 public class GameTest {
 	Game game = new Game(2);
 
+	@Test
+	public void testStart(){
+		game.start();
+	}
+	@Test
+	public void testLoad(){
+		Game game = new Game();
+		game.load();
+	}
 	/**
 	 *Test if the game can check if a turn is ended (all players have moved once)
 	 * @result the function will return true and pass the test

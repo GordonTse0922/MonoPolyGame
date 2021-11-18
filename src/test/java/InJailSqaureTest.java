@@ -4,9 +4,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import Model.InJailSquare;
 
+import java.io.ByteArrayInputStream;
+
 public class InJailSqaureTest {
 	InJailSquare inJailSquare = new InJailSquare("No Name", 0);
-	
+
 	/**
 	 *  Test the return type of the getter function "getName" in InJail Square Class. The return type should be String.
 	 */	
@@ -82,7 +84,7 @@ public class InJailSqaureTest {
     @Order(8)
     public void testInJailSquareAskPayOrDice() {
     	int result = inJailSquare.askPayOrDice(3,1, 1);
-    	assertFalse(3 >= result && result >= 0);
+    	assertTrue(result==2);
     }
     
     /**
@@ -94,8 +96,21 @@ public class InJailSqaureTest {
     @Test
     @Order(9)
     public void testInJailSquareAskPayOrDiceParameter() {
+        // MOCK System.in
+        String data = "1";
+        System.setIn(new ByteArrayInputStream(data.getBytes()));
     	int result = inJailSquare.askPayOrDice(0, 1, 1);
-    	assertFalse(result == 2);
+    	assertTrue(result == 2);
+    }
+    @Test
+    @Order(10)
+    public void testInJailSquareAskPayOrDiceParameter_2() {
+        // MOCK System.in
+        String data = "2";
+        System.setIn(new ByteArrayInputStream(data.getBytes()));
+        int result = inJailSquare.askPayOrDice(0, 1, 1);
+        // MOCK System.in
+        assertTrue(result == 1);
     }
     
     /**
